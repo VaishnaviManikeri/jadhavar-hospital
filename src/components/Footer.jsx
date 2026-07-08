@@ -33,9 +33,9 @@ const Footer = () => (
 
       <div className="footer-columns">
         <div className="footer-brand">
-          <Link to="/" className="footer-brand-heading">Dr. Jadhavar</Link>
-          <h3>Physiotherapy &amp; Rehabilitation Center</h3>
-          <p>Personalized, evidence-based physiotherapy focused on reducing pain, restoring movement, and helping you return to an active life.</p>
+          <Link to="/" className="footer-brand-heading footer-brand-copy">Dr. Jadhavar</Link>
+<h3 className="footer-brand-copy">Physiotherapy &amp; Rehabilitation Center</h3>
+          <p className="footer-brand-copy">Personalized, evidence-based physiotherapy focused on reducing pain, restoring movement, and helping you return to an active life.</p>
         </div>
 
         <div className="footer-link-column">
