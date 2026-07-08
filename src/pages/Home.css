@@ -20,7 +20,7 @@
   display: flex;
   padding: 60px 24px;
   isolation: isolate;
-  background-image: linear-gradient(90deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.88) 72%, #fff 100%), url('/assets/images/pratibha.png');
+  background-image: linear-gradient(90deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.88) 72%, #fff 100%), url('/assets/images/pratibha1.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
