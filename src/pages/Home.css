@@ -1498,7 +1498,8 @@ width: min(1400px, 100%);
 }
 .home-hero,
 .hero-section {
-  margin-top: 28px;
+  margin-top: 36px;
+  padding-top: 0;
 }
 .healthcare-services {
   width: 100vw;
