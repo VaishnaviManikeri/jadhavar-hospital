@@ -1,0 +1,331 @@
+
+[1m[33mwarn[39m[22m - The `content` option in your Tailwind CSS configuration is missing or empty.
+[1m[33mwarn[39m[22m - Configure your content sources or your generated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration
+[2m3:26:27 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "lucide-react" from "src/pages/Conditions.jsx". Does the file exist?
+[2m3:26:29 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "lucide-react" from "src/pages/Conditions.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Conditions.jsx[39m:18:7
+[33m  33 |    Activity,
+  34 |    UserCheck
+  35 |  } from "lucide-react";
+     |          ^
+  36 |  import "./Conditions.css";
+  37 |  const CONDITIONS = [[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m3:26:29 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "lucide-react" from "src/pages/Conditions.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Conditions.jsx[39m:18:7
+[33m  33 |    Activity,
+  34 |    UserCheck
+  35 |  } from "lucide-react";
+     |          ^
+  36 |  import "./Conditions.css";
+  37 |  const CONDITIONS = [[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m3:26:29 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "lucide-react" from "src/pages/Conditions.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Conditions.jsx[39m:18:7
+[33m  33 |    Activity,
+  34 |    UserCheck
+  35 |  } from "lucide-react";
+     |          ^
+  36 |  import "./Conditions.css";
+  37 |  const CONDITIONS = [[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:38:49 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:50 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:52 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/App.jsx[39m:3:31
+[33m  1  |  import React from "react";
+  2  |  import { Routes, Route } from "react-router-dom";
+  3  |  import { HelmetProvider } from "react-helmet-async";
+     |                                  ^
+  4  |  import Navbar from "./components/Navbar";
+  5  |  import Footer from "./components/Footer";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:38:53 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "axios" from "src/api.js". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/App.jsx[39m:3:31
+[33m  1  |  import React from "react";
+  2  |  import { Routes, Route } from "react-router-dom";
+  3  |  import { HelmetProvider } from "react-helmet-async";
+     |                                  ^
+  4  |  import Navbar from "./components/Navbar";
+  5  |  import Footer from "./components/Footer";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:39:24 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:39:33 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?
+[2m10:39:33 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:39:33 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:39:33 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:41:07 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "react-helmet-async" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/App.jsx[39m:3:31
+[33m  1  |  import React from "react";
+  2  |  import { Routes, Route } from "react-router-dom";
+  3  |  import { HelmetProvider } from "react-helmet-async";
+     |                                  ^
+  4  |  import Navbar from "./components/Navbar";
+  5  |  import Footer from "./components/Footer";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:41:07 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:41:07 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:41:07 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:41:58 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:41:58 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:41:58 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:41:58 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Blog.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect } from "react";
+  2  |  import { Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser } from "react-icons/fi";
+  5  |  import { getBlogs } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:41:59 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/BlogPost.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect, useRef } from "react";
+  2  |  import { useParams, Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser, FiShare2, FiArrowLeft } from "react-icons/fi";
+  5  |  import { getBlogBySlug } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:42:01 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/admin/BlogAdmin.jsx[39m:4:23
+[33m  2  |  import { Link } from "react-router-dom";
+  3  |  import { FiPlus, FiEdit2, FiTrash2, FiEye, FiClock } from "react-icons/fi";
+  4  |  import ReactQuill from "react-quill";
+     |                          ^
+  5  |  import "react-quill/dist/quill.snow.css";
+  6  |  import { getBlogs, createBlog, updateBlog, deleteBlog } from "../../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Blog.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect } from "react";
+  2  |  import { Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser } from "react-icons/fi";
+  5  |  import { getBlogs } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/BlogPost.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect, useRef } from "react";
+  2  |  import { useParams, Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser, FiShare2, FiArrowLeft } from "react-icons/fi";
+  5  |  import { getBlogBySlug } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:45:08 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "react-quill" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/admin/BlogAdmin.jsx[39m:4:23
+[33m  2  |  import { Link } from "react-router-dom";
+  3  |  import { FiPlus, FiEdit2, FiTrash2, FiEye, FiClock } from "react-icons/fi";
+  4  |  import ReactQuill from "react-quill";
+     |                          ^
+  5  |  import "react-quill/dist/quill.snow.css";
+  6  |  import { getBlogs, createBlog, updateBlog, deleteBlog } from "../../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:46:26 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?
+[2m10:46:26 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?
+[2m10:46:26 PM[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "date-fns" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?
+[2m10:46:26 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/BlogPost.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/BlogPost.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect, useRef } from "react";
+  2  |  import { useParams, Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser, FiShare2, FiArrowLeft } from "react-icons/fi";
+  5  |  import { getBlogBySlug } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:46:26 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/Blog.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/Blog.jsx[39m:3:23
+[33m  1  |  import { useState, useEffect } from "react";
+  2  |  import { Link } from "react-router-dom";
+  3  |  import { format } from "date-fns";
+     |                          ^
+  4  |  import { FiCalendar, FiClock, FiUser } from "react-icons/fi";
+  5  |  import { getBlogs } from "../api";[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m10:46:27 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "date-fns" from "src/pages/admin/BlogAdmin.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/jadhavar_hospital/frontend/src/pages/admin/BlogAdmin.jsx[39m:7:23
+[33m  5  |  import "react-quill/dist/quill.snow.css";
+  6  |  import { getBlogs, createBlog, updateBlog, deleteBlog } from "../../api";
+  7  |  import { format } from "date-fns";
+     |                          ^
+  8  |  const BlogAdmin = () => {
+  9  |    const [blogs, setBlogs] = useState([]);[39m
+      at TransformPluginContext._formatError (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/jadhavar_hospital/frontend/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)

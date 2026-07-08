@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --brand-teal: #08a3a3;
+  --brand-teal-dark: #087f80;
+  --brand-teal-light: #2bc1bd;
+  --brand-charcoal: #303638;
+  --brand-muted: #667477;
+  --brand-mint: #e8f8f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8fafc;
+  color: var(--brand-charcoal);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+button, input, textarea, select { font: inherit; }
+
+html {
+  overflow-x: clip;
+  text-size-adjust: 100%;
+}
+
+body,
+#root,
+.app,
+.main-content {
+  width: 100%;
+  min-height: 100%;
+  min-width: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--brand-charcoal);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+:where(h1) { font-weight: 700; }
+:where(h2, h3) { font-weight: 600; }
+:where(h4, h5, h6, label, legend) { font-weight: 500; }
+:where(p, li, address, input, textarea, select) { font-weight: 400; }
+:where(strong, b) { font-weight: 600; }
+:where(button, [role='button']) { font-weight: 600; }
+
+:where(p, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+  overflow-wrap: anywhere;
+}
+
+:where(img, video, canvas, svg, iframe) {
+  max-width: 100%;
+}
+
+:where(img, video) {
+  height: auto;
+}
+
+:where(input, textarea, select, button) {
+  max-width: 100%;
+}
+
+:where(button, a, input, textarea, select):focus-visible {
+  outline: 3px solid rgba(8, 163, 163, .32);
+  outline-offset: 3px;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 0;
+  min-width: 0;
+  overflow: clip;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: var(--brand-teal);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--brand-teal-light), var(--brand-teal-dark));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-teal-dark);
+}
+
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+
+  :where(h1) { line-height: 1.15; }
+  :where(h2, h3) { line-height: 1.25; }
+}
+
+@media (max-width: 380px) {
+  body { font-size: 14px; }
+  :where(button, input, textarea, select) { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8fafc;
+  color: var(--brand-charcoal);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: var(--brand-teal);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--brand-teal-light), var(--brand-teal-dark));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-teal-dark);
+}

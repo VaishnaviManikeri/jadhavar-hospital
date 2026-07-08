@@ -1,0 +1,275 @@
+/* =========================================================
+   Conditions.css
+   Theme: #08A3A3 (teal) + white + black
+   ========================================================= */
+
+.conditions-section {
+  --teal: #08A3A3;
+  --teal-dark: #067f7f;
+  --teal-tint: #e6f7f7;
+  --ink: #0a0a0a;
+  --paper: #ffffff;
+
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--paper);
+  padding: 5rem 1.5rem;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.conditions-section *,
+.conditions-section *::before,
+.conditions-section *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------- Header ---------------- */
+
+.conditions-header {
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.conditions-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-tint);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.conditions-heading {
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.conditions-subheading {
+  font-size: 1.05rem;
+  color: #4b4b4b;
+  margin: 0;
+}
+
+/* ---------------- Grid ---------------- */
+
+.conditions-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------------- Card ---------------- */
+
+.condition-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: stretch;
+  text-align: left;
+  background: var(--paper);
+  border: 2px solid var(--teal);
+  border-radius: 18px;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.condition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -12px rgba(8, 163, 163, 0.35);
+}
+
+.condition-card:focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 3px;
+}
+
+.condition-card.is-filled {
+  border-color: var(--teal-dark);
+  box-shadow: 0 16px 32px -14px rgba(8, 163, 163, 0.45);
+}
+
+/* ---- Bucket / liquid fill layer ----
+   Sits behind the content, animates its height from 0 -> 100%
+   to look like the card is being filled with liquid from the bottom. */
+
+.fill-layer {
+  position: absolute;
+  inset: 0;
+  top: auto;
+  height: 0%;
+  width: 100%;
+  background: linear-gradient(180deg, var(--teal) 0%, var(--teal-dark) 100%);
+  z-index: 0;
+  transition: height 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.fill-wave {
+  position: absolute;
+  top: -1px;
+  left: -25%;
+  width: 150%;
+  height: 24px;
+  background: var(--paper);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease 0.35s;
+}
+
+.condition-card.is-filled .fill-layer {
+  height: 100%;
+}
+
+.condition-card.is-filled .fill-wave {
+  opacity: 0.12;
+  animation: wave-drift 2.6s ease-in-out infinite;
+}
+
+@keyframes wave-drift {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(3%) scaleY(1.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill-layer {
+    transition: none;
+  }
+  .condition-card.is-filled .fill-wave {
+    animation: none;
+  }
+}
+
+/* ---------------- Card content ---------------- */
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.75rem 1.5rem 1.5rem;
+  gap: 0.85rem;
+}
+
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--teal-tint);
+  transition: background 0.4s ease;
+}
+
+.condition-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--teal-dark);
+  transition: color 0.4s ease;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  transition: color 0.4s ease;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #333;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease 0.15s, color 0.4s ease;
+}
+
+.card-indicator {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--teal);
+  transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+}
+
+.indicator-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--teal-dark);
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* ---- Filled / expanded state text + icon recoloring ---- */
+
+.condition-card.is-filled .icon-wrap {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.condition-card.is-filled .condition-icon {
+  color: var(--paper);
+}
+
+.condition-card.is-filled .card-title {
+  color: var(--paper);
+}
+
+.condition-card.is-filled .card-description {
+  max-height: 220px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.condition-card.is-filled .card-indicator {
+  border-color: var(--paper);
+  transform: rotate(45deg);
+}
+
+.condition-card.is-filled .indicator-icon {
+  color: var(--paper);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 480px) {
+  .conditions-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .condition-card {
+    min-height: 180px;
+  }
+
+  .card-content {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+}

@@ -1,0 +1,475 @@
+/* ===== MAIN NAVBAR ===== */
+.navbar {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.navbar.scrolled {
+  box-shadow: none;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== TOP SECTION ===== */
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  gap: 16px;
+  border: none;
+  outline: none;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Center Section */
+.navbar-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 15px;
+  border: none;
+  outline: none;
+}
+
+.clinic-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a3a5c;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  border: none;
+  outline: none;
+}
+
+.clinic-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  color: #4a9eff;
+  margin: 1px 0 6px 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+}
+
+/* ===== NAVIGATION LINKS ===== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  position: relative;
+  border: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #4a5568;
+  text-decoration: none;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+}
+
+.nav-link:hover {
+  color: #4a9eff;
+  background: transparent !important;
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: #4a9eff;
+  border-radius: 4px;
+}
+
+.nav-link.active {
+  color: #1a3a5c;
+  background: transparent !important;
+  font-weight: 500;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(90deg, #4a9eff, #1a3a5c);
+  border-radius: 4px;
+}
+
+/* ===== APPOINTMENT BUTTON ===== */
+.btn-appointment {
+  background: linear-gradient(135deg, #1a3a5c, #2a5f7a);
+  color: #ffffff;
+  padding: 8px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 58, 92, 0.25);
+  white-space: nowrap;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.btn-appointment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 58, 92, 0.35);
+  background: linear-gradient(135deg, #2a5f7a, #1a3a5c);
+  color: #ffffff;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #1a3a5c;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.hamburger:hover {
+  color: #4a9eff;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  border: none;
+  outline: none;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+}
+
+.mobile-nav-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background: #ffffff;
+  padding: 90px 24px 40px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 2px;
+  border: none;
+  outline: none;
+}
+
+.mobile-nav-menu.active {
+  display: flex;
+  left: 0;
+}
+
+.mobile-nav-item {
+  width: 100%;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+
+.mobile-nav-link {
+  color: #1a3a5c;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  outline: none;
+}
+
+.mobile-nav-link:hover {
+  border-left-color: #4a9eff;
+  color: #4a9eff;
+  background: rgba(74, 158, 255, 0.05);
+}
+
+.mobile-nav-link.active {
+  border-left-color: #1a3a5c;
+  color: #1a3a5c;
+  font-weight: 500;
+  background: rgba(26, 58, 92, 0.05);
+}
+
+.btn-appointment-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #1a3a5c, #2a5f7a);
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 58, 92, 0.3);
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  outline: none;
+}
+
+.btn-appointment-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 58, 92, 0.4);
+  background: linear-gradient(135deg, #2a5f7a, #1a3a5c);
+  color: #ffffff;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .logo-image {
+    width: 58px;
+    height: 58px;
+  }
+
+  .clinic-name {
+    font-size: 1rem;
+  }
+
+  .clinic-tagline {
+    font-size: 0.6rem;
+  }
+
+  .btn-appointment {
+    padding: 7px 18px;
+    font-size: 0.75rem;
+  }
+
+  .nav-link {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .nav-menu {
+    gap: 2px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .navbar-top {
+    padding: 8px 0;
+    flex-wrap: nowrap;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .btn-appointment {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-center {
+    padding: 0 10px;
+    flex: 1;
+  }
+
+  .clinic-name {
+    font-size: 0.85rem;
+  }
+
+  .clinic-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobile-nav-menu {
+    display: flex;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .navbar-container {
+    padding: 0 12px;
+  }
+
+  .navbar-top {
+    padding: 6px 0;
+  }
+
+  .logo-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .clinic-name {
+    font-size: 0.7rem;
+  }
+
+  .clinic-tagline {
+    font-size: 0.4rem;
+    letter-spacing: 0.3px;
+  }
+
+  .navbar-center {
+    padding: 0 6px;
+  }
+
+  .hamburger {
+    font-size: 1.4rem;
+  }
+
+  .mobile-nav-menu {
+    padding: 80px 16px 32px;
+    max-width: 100%;
+  }
+
+  .mobile-nav-link {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .btn-appointment-mobile {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Logo-based teal and charcoal brand theme */
+.dropdown-chevron { margin-left: 5px; font-size: 9px; transition: transform .25s ease; }
+.nav-dropdown:hover .dropdown-chevron { transform: rotate(180deg); }
+.nav-dropdown-menu { position: absolute; z-index: 20; top: calc(100% + 8px); left: 50%; width: 190px; padding: 8px; border: 1px solid #dcebea; border-radius: 13px; background: #fff; box-shadow: 0 16px 40px rgba(18,61,73,.15); opacity: 0; visibility: hidden; transform: translate(-50%,8px); transition: .22s ease; }
+.nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%,0); }
+.nav-dropdown-menu a { display: block; padding: 10px 12px; border-radius: 8px; color: #4a5568; font-family: 'Poppins',sans-serif; font-size: 11px; font-weight: 400; text-align: left; text-decoration: none; }
+.nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: #087f80; background: #e8f8f7; }
+.mobile-nav-sublink { display: block; margin: 0 12px 5px 22px; padding: 8px 15px; border-left: 2px solid #ccefed; color: #647477; font-family: 'Poppins',sans-serif; font-size: 12px; text-decoration: none; }
+.mobile-nav-sublink.active, .mobile-nav-sublink:hover { color: #087f80; border-left-color: #08a3a3; background: #f0fbfa; }
+.clinic-name,
+.nav-link,
+.nav-link.active,
+.hamburger,
+.mobile-nav-link,
+.mobile-nav-link.active { color: var(--brand-charcoal); }
+
+.clinic-tagline,
+.nav-link:hover,
+.hamburger:hover,
+.mobile-nav-link:hover { color: var(--brand-teal); }
+
+.nav-link:hover::after { background: var(--brand-teal); }
+.nav-link.active::after { background: linear-gradient(90deg, var(--brand-teal-light), var(--brand-teal-dark)); }
+.btn-appointment,
+.btn-appointment-mobile { background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark)); }
+.btn-appointment:hover,
+.btn-appointment-mobile:hover { background: linear-gradient(135deg, var(--brand-teal-dark), var(--brand-charcoal)); }
+.mobile-nav-link:hover { border-left-color: var(--brand-teal); }
+.mobile-nav-link.active { border-left-color: var(--brand-teal-dark); }
