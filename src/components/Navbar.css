@@ -14,23 +14,80 @@
 }
 
 .navbar-container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ===== TOP SECTION ===== */
+/* ===== ROW 1: BRAND ROW ===== */
+/* Clinic name/tagline centered, Book Appointment pinned to the end.
+   Hamburger replaces the button on mobile. */
+.navbar-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 0 6px;
+  border-bottom: 1px solid #eef2f5;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+}
+
+.navbar-title {
+  text-align: center;
+}
+
+.navbar-brand-row .btn-appointment {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-brand-row .btn-appointment:hover {
+  transform: translateY(-52%);
+}
+
+/* ===== ROW 2: LINKS + CENTERED LOGO ===== */
+/* Three-part layout: left links | centered logo | right links. */
 .navbar-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 0;
-  gap: 16px;
   border: none;
   outline: none;
 }
 
-/* Logo */
+/* Left / right link rails flanking the logo */
+.navbar-side {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.navbar-side-left {
+  justify-content: flex-end;
+}
+
+.navbar-side-right {
+  justify-content: flex-start;
+}
+
+/* Centered logo block */
+.navbar-logo-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 32px;
+  border: none;
+  outline: none;
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -46,8 +103,8 @@
 }
 
 .logo-image {
-  width: 70px;
-  height: 70px;
+  width: 66px;
+  height: 66px;
   object-fit: contain;
   display: block;
   background: transparent !important;
@@ -56,26 +113,14 @@
   outline: none !important;
 }
 
-/* Center Section */
-.navbar-center {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 15px;
-  border: none;
-  outline: none;
-}
-
 .clinic-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #1a3a5c;
   margin: 0;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
   border: none;
   outline: none;
 }
@@ -84,9 +129,9 @@
   font-family: 'Poppins', sans-serif;
   font-size: 0.7rem;
   color: #4a9eff;
-  margin: 1px 0 6px 0;
+  margin: 2px 0 0 0;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   border: none;
   outline: none;
 }
@@ -95,10 +140,9 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
   list-style: none;
-  margin: 8px 0 0;
+  margin: 0;
   padding: 0;
   border: none;
   outline: none;
@@ -318,11 +362,55 @@
 
 /* ===== RESPONSIVE DESIGN ===== */
 
-/* Tablet */
+/* Large desktop: links start to get tight before tablet breakpoint */
+@media screen and (max-width: 1200px) {
+  .nav-link {
+    padding: 5px 9px;
+    font-size: 0.76rem;
+  }
+
+  .navbar-logo-center {
+    padding: 0 18px;
+  }
+}
+
+/* Tablet: side links no longer fit next to a full logo block, so drop
+   back to the hamburger (in the brand row) and keep just the centered
+   logo on the row below. */
 @media screen and (max-width: 1024px) {
+  .navbar-side {
+    display: none;
+  }
+
+  .navbar-brand-row {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  .navbar-top {
+    justify-content: center;
+    padding: 8px 0 10px;
+  }
+
+  .navbar-logo-center {
+    padding: 0;
+  }
+
+  .navbar-brand-row .btn-appointment {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .logo-image {
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
   }
 
   .clinic-name {
@@ -330,21 +418,7 @@
   }
 
   .clinic-tagline {
-    font-size: 0.6rem;
-  }
-
-  .btn-appointment {
-    padding: 7px 18px;
-    font-size: 0.75rem;
-  }
-
-  .nav-link {
-    padding: 5px 10px;
-    font-size: 0.75rem;
-  }
-
-  .nav-menu {
-    gap: 2px;
+    font-size: 0.62rem;
   }
 }
 
@@ -354,26 +428,12 @@
     padding: 0 16px;
   }
 
+  .navbar-brand-row {
+    padding: 8px 36px 6px;
+  }
+
   .navbar-top {
-    padding: 8px 0;
-    flex-wrap: nowrap;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .btn-appointment {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .navbar-center {
-    padding: 0 10px;
-    flex: 1;
+    padding: 6px 0 8px;
   }
 
   .clinic-name {
@@ -383,12 +443,12 @@
   .clinic-tagline {
     font-size: 0.5rem;
     letter-spacing: 0.5px;
-    margin-bottom: 0;
+    margin-top: 1px;
   }
 
   .logo-image {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
   }
 
   .mobile-nav-menu {
@@ -418,10 +478,6 @@
   .clinic-tagline {
     font-size: 0.4rem;
     letter-spacing: 0.3px;
-  }
-
-  .navbar-center {
-    padding: 0 6px;
   }
 
   .hamburger {
@@ -473,3 +529,160 @@
 .btn-appointment-mobile:hover { background: linear-gradient(135deg, var(--brand-teal-dark), var(--brand-charcoal)); }
 .mobile-nav-link:hover { border-left-color: var(--brand-teal); }
 .mobile-nav-link.active { border-left-color: var(--brand-teal-dark); }
+.navbar-brand-copy,
+.navbar-info-copy {
+  text-align: left !important;
+}
+
+.navbar-info-row {
+  justify-content: flex-start !important;
+}
+
+.navbar-actions {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.navbar-top > .navbar-actions {
+  top: -36px;
+}
+
+.navbar-actions .btn-appointment {
+  position: static !important;
+  transform: none;
+}
+
+.navbar-emergency,
+.navbar-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #087f80;
+  text-decoration: none;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.navbar-emergency {
+  gap: 7px;
+  font: 600 .76rem 'Poppins', sans-serif;
+}
+
+.navbar-social {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #bfe4e2;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.navbar-social:hover {
+  color: #fff;
+  background: #08a3a3;
+}
+
+@media (max-width: 1024px) {
+  .navbar-actions {
+    gap: 7px;
+  }
+
+  .navbar-emergency span,
+  .navbar-social {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-actions {
+    display: none;
+  }
+}
+.navbar-brand-copy,
+.navbar-info-copy {
+  width: auto !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+}
+
+.navbar-info-row {
+  justify-content: flex-start !important;
+  padding-left: 0 !important;
+}
+.navbar-utility-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 62px;
+  padding: 8px 0;
+  border-bottom: none;
+}
+
+.navbar-utility-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.navbar-utility-copy strong {
+  color: #263638;
+  font: 700 1.08rem/1.3 'Poppins', sans-serif;
+}
+
+.navbar-utility-copy span {
+  margin-top: 3px;
+  color: #08a3a3;
+  font: 400 .66rem/1.4 'Poppins', sans-serif;
+  letter-spacing: .55px;
+}
+
+.navbar-utility-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: 24px;
+}
+
+.navbar-utility-actions .btn-appointment {
+  position: static !important;
+  transform: none !important;
+}
+
+.navbar-brand-copy,
+.navbar-info-row {
+  display: none !important;
+}
+
+.navbar-top > .navbar-actions {
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-utility-copy strong { font-size: .9rem; }
+  .navbar-utility-copy span { font-size: .54rem; }
+  .navbar-utility-actions { gap: 7px; }
+  .navbar-utility-actions .navbar-emergency span { display: none; }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-utility-row { min-height: 50px; }
+  .navbar-utility-copy strong { font-size: .72rem; }
+  .navbar-utility-copy span { max-width: 260px; font-size: .44rem; }
+  .navbar-utility-actions .navbar-emergency,
+  .navbar-utility-actions .navbar-social { display: none; }
+  .navbar-utility-book { padding: 8px 11px !important; font-size: .62rem !important; }
+}
+.clinic-name,
+.clinic-tagline,
+.navbar-actions {
+  display: none !important;
+}
