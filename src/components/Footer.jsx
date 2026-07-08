@@ -24,7 +24,7 @@ const Footer = () => (
 
       <div className="footer-cta">
         <span>Care that goes beyond boundaries</span>
-        <h2>Move Better. Recover Stronger.<br />Live Pain-Free.</h2>
+        <h2>Move Better. Recover Stronger.Live Pain-Free.</h2>
         <p>Advanced Physiotherapy | Sports Injury | Pain Relief | Rehabilitation</p>
         <Link to="/contact" className="footer-appointment">
           Book an Appointment <FaArrowRight />
