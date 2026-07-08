@@ -396,6 +396,8 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 15px;
+    color: #ffffff;
+
 }
 
 .cta-content p {
@@ -627,4 +629,18 @@
   .cta-content h2 {
     font-size: 1.6rem;
   }
+}
+.recovery-section,
+.recoveries-section,
+.success-stories-section {
+  background-color: #fff;
+}
+
+.recovery-section,
+.recovery-section *,
+.recoveries-section,
+.recoveries-section *,
+.success-stories-section,
+.success-stories-section * {
+  color: #4b5563 !important;
 }

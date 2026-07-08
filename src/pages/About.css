@@ -227,7 +227,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .stat-item p {
@@ -372,4 +372,16 @@
   .about-hero-cards { flex-direction: column; }
   .about-hero-card { width: 100%; min-height: auto; }
   .about-hero .primary-card { transform: none; }
+}
+.stats-section .stat-number,
+.stats-section .stat-value,
+.stats-section .stat-label,
+.stats-section .stat-item h3,
+.stats-section .stat-item p,
+.about-stats .stat-number,
+.about-stats .stat-value,
+.about-stats .stat-label,
+.about-stats .stat-item h3,
+.about-stats .stat-item p {
+  color: #fff !important;
 }

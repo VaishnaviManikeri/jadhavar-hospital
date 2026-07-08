@@ -192,3 +192,144 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-teal-dark);
 }
+[style*="background-color: #08A3A3" i],
+[style*="background-color:#08A3A3" i],
+[style*="background: #08A3A3" i],
+[style*="background:#08A3A3" i],
+[class*="bg-[#08A3A3]"],
+[style*="background-color: #08A3A3" i] *,
+[style*="background-color:#08A3A3" i] *,
+[style*="background: #08A3A3" i] *,
+[style*="background:#08A3A3" i] *,
+[class*="bg-[#08A3A3]"] * {
+  color: #fff !important;
+}
+@media (max-width: 768px) {
+  section[class*="hero" i],
+  header[class*="hero" i],
+  div[class*="hero-section" i],
+  div[class*="page-hero" i] {
+    background-color: #08a3a3 !important;
+    background-image: none !important;
+  }
+
+  section[class*="hero" i]::before,
+  section[class*="hero" i]::after,
+  header[class*="hero" i]::before,
+  header[class*="hero" i]::after,
+  div[class*="hero-section" i]::before,
+  div[class*="hero-section" i]::after,
+  div[class*="page-hero" i]::before,
+  div[class*="page-hero" i]::after {
+    background-image: none !important;
+  }
+
+  section[class*="hero" i] > img,
+  section[class*="hero" i] > picture,
+  header[class*="hero" i] > img,
+  header[class*="hero" i] > picture,
+  div[class*="hero-section" i] > img,
+  div[class*="hero-section" i] > picture,
+  div[class*="page-hero" i] > img,
+  div[class*="page-hero" i] > picture {
+    display: none !important;
+  }
+}
+/* Site-wide responsive foundation */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body,
+main,
+header,
+nav,
+footer,
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
+main,
+main > * {
+  min-width: 0;
+}
+
+img,
+picture,
+video,
+svg,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+.container,
+[class*="container" i],
+[class*="wrapper" i] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+nav > *,
+header > *,
+footer > * {
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 992px) {
+  nav,
+  nav > *,
+  header > *,
+  footer > * {
+    width: 100%;
+  }
+
+  [class*="nav" i],
+  [class*="footer" i] {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  main,
+  section,
+  .container,
+  [class*="container" i],
+  [class*="wrapper" i] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}

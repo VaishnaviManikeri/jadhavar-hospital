@@ -18,7 +18,7 @@
   position: relative;
   min-height: 650px;
   display: flex;
-  padding: 48px 24px;
+  padding: 60px 24px;
   isolation: isolate;
   background-image: linear-gradient(90deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.88) 72%, #fff 100%), url('/assets/images/pratibha.png');
   background-position: center;
@@ -391,8 +391,8 @@ width: min(1400px, 100%);
 }
 
 .healthcare-card:nth-child(1) {
-  top: 142px;
-  left: 300px;
+  top: 100px;
+  left: 320px;
 }
 
 .healthcare-card:nth-child(2) {
@@ -402,12 +402,12 @@ width: min(1400px, 100%);
 
 .healthcare-card:nth-child(3) {
   top: 260px;
-  left: 590px;
+  left: 600px;
 }
 
 .healthcare-card:nth-child(4) {
-  top: 360px;
-  left: 260px;
+  top: 320px;
+  left: 290px;
 }
 
 .healthcare-card-icon {
@@ -893,6 +893,7 @@ width: min(1400px, 100%);
   font-size: clamp(1.35rem, 2vw, 1.8rem);
   line-height: 1.3;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .home-condition-grid-description p {
@@ -1488,3 +1489,14 @@ width: min(1400px, 100%);
 .service-card,
 .home-condition-card,
 .treatment-card { border-color: #dcefed; }
+/* Slightly emphasize the icons in the conditions-we-treat section. */
+.conditions-section .condition-icon,
+.conditions-section .condition-card svg,
+.conditions-section .condition-card img {
+  transform: scale(1.1);
+  transform-origin: center;
+}
+.home-hero,
+.hero-section {
+  margin-top: 12px;
+}

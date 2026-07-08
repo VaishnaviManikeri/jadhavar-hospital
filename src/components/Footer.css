@@ -27,3 +27,11 @@
 .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.5); font-size: 9px; }
 @media (max-width: 900px) { .footer-panel { padding-inline: 32px; } .footer-columns { grid-template-columns: 1.4fr 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 640px) { .site-footer { padding: 110px 12px 12px; } .footer-panel { padding: 108px 22px 22px; border-radius: 10px; } .footer-panel::before { top: -94px; width: 188px; height: 188px; border-radius: 50%; } .footer-earth { top: -85px; width: 170px; height: 170px; } .footer-cta { margin-bottom: 40px; } .footer-cta h2 { letter-spacing: -1px; } .footer-columns { grid-template-columns: 1fr 1fr; gap: 34px 24px; padding-top: 34px; } .footer-brand, .footer-contact { grid-column: 1 / -1; } .footer-bottom { flex-direction: column; gap: 5px; } }
+/* Keep the footer edge-to-edge even when rendered inside a constrained page wrapper. */
+footer {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: none;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+}

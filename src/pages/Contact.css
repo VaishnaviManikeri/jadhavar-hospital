@@ -459,3 +459,8 @@
     font-size: 1.8rem;
   }
 }
+.contact-hero h1,
+.contact-header h1,
+.contact-title {
+  color: #fff !important;
+}
