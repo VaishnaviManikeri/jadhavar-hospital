@@ -152,10 +152,27 @@
     </script>
 
     <meta name="theme-color" content="#08a3a3" />
-  <script type="module" crossorigin src="/assets/index-Bv9oTkuJ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-qpmLL1Po.css">
+  <script type="module" crossorigin src="/assets/index-CCK40rA8.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C6VM3U2c.css">
 </head>
-<body>
+  <body>
     <div id="root"></div>
-</body>
+    <script>
+      document.addEventListener('click', function (event) {
+        var trigger = event.target.closest('a, button');
+        if (!trigger) return;
+
+        if (trigger.textContent.trim().replace(/\s+/g, ' ') === 'Book an Appointment') {
+          event.preventDefault();
+          window.location.href = '/appointment';
+        }
+
+        if (trigger.textContent.trim().replace(/\s+/g, ' ').toLowerCase().includes('emergency')) {
+          event.preventDefault();
+          window.location.href = 'tel:+917700995363';
+        }
+      });
+
+    </script>
+  </body>
 </html>

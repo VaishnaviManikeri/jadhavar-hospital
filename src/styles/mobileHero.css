@@ -1,0 +1,38 @@
+html,
+body,
+#root {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 767px) {
+  [class*="hero"] > img,
+  [class*="hero"] > picture,
+  [class*="hero"] .hero-image,
+  [class*="hero"] .hero-media,
+  [class*="hero"] .hero-visual,
+  [class*="hero"] .hero-illustration,
+  [class*="hero"] .hero-photo,
+  .hero img,
+  .hero picture,
+  .page-hero img,
+  .page-hero picture,
+  .section-hero img,
+  .section-hero picture,
+  .hero-image,
+  .hero-media,
+  .hero-visual,
+  .hero-illustration,
+  .hero-photo {
+    display: none !important;
+  }
+
+  [class*="hero"]:not(.home-hero)::before,
+  [class*="hero"]:not(.home-hero)::after,
+  [class*="hero"]:not(.home-hero),
+  .hero,
+  .page-hero,
+  .section-hero {
+    background-image: none !important;
+  }
+}

@@ -125,12 +125,29 @@ const Navbar = () => {
             <span>Advanced Physiotherapy | Sports Injury | Pain Relief | Rehabilitation</span>
           </div>
           <div className="navbar-utility-actions">
-            <Link to="/contact" className="navbar-emergency">
+            <a href="tel:+917700995363" className="navbar-emergency" aria-label="Call emergency number +91 77009 95363">
               <FaPhoneAlt aria-hidden="true" /> <span>Emergency</span>
-            </Link>
-            <a href="https://www.instagram.com/" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://www.facebook.com/" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+            </a>
+            <a href="https://www.instagram.com/drjadhavarphysio" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.facebook.com/profile.php?id=61591214087018" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
             <Link to="/appointment" className="btn-appointment navbar-utility-book">Book Appointment</Link>
+          </div>
+          <div className="navbar-mobile-controls">
+            <div className="navbar-mobile-actions">
+              <Link to="/appointment" className="btn-appointment navbar-mobile-book">Book Appointment</Link>
+              <a href="tel:+917700995363" className="navbar-emergency navbar-mobile-emergency" aria-label="Call emergency number +91 77009 95363">
+                <FaPhoneAlt aria-hidden="true" /> <span>Emergency</span>
+              </a>
+            </div>
+            <button
+              className="hamburger navbar-mobile-toggle"
+              type="button"
+              onClick={toggleMenu}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
           </div>
         </div>
         {/* Row 1: clinic name/tagline + Book Appointment (hamburger on mobile) */}
@@ -141,9 +158,9 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-actions">
-            <Link to="/contact" className="navbar-emergency">
+            <a href="tel:+917700995363" className="navbar-emergency" aria-label="Call emergency number +91 77009 95363">
               <FaPhoneAlt aria-hidden="true" /> <span>Emergency</span>
-            </Link>
+            </a>
             <a href="https://www.instagram.com/" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
             <a href="https://www.facebook.com/" className="navbar-social" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
             <Link to="/appointment" className="btn-appointment">Book Appointment</Link>

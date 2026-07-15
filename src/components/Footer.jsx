@@ -26,7 +26,7 @@ const Footer = () => (
         <span>Care that goes beyond boundaries</span>
         <h2>Move Better. Recover Stronger.Live Pain-Free.</h2>
         <p>Advanced Physiotherapy | Sports Injury | Pain Relief | Rehabilitation</p>
-        <Link to="/contact" className="footer-appointment">
+        <Link to="/appointment" className="footer-appointment">
           Book an Appointment <FaArrowRight />
         </Link>
       </div>
@@ -59,16 +59,16 @@ const Footer = () => (
         <div className="footer-contact">
           <h3>Contact Details</h3>
           <address>
-            <span><FaLocationDot /><i>Dr. Jadhavar Physiotherapy Center,<br />Maharashtra, India</i></span>
-            <span><FaPhone /><i>Contact number available on request</i></span>
-            <span><FaEnvelope /><i><Link to="/contact">Visit our Contact page</Link></i></span>
-            <span><FaClock /><i>Mon-Sat: 9:00 AM-8:00 PM</i></span>
+            <span><FaLocationDot /><i>Dr. Jadhavar Physiotherapy Center,<br />Indraprastha, Kranti Nagar, Behind Trimurti Hospital, Vadgaon (Budruk), Pune – 411041, Maharashtra, India.</i></span>
+            <span><FaPhone /><i>+91 77009 95363 / +91 89280 09640</i></span>
+            <span><FaEnvelope /><i><Link to="/contact">drpratibhajadhavar@gmail.com</Link></i></span>
+            <span><FaClock /><i>Mon-Sat: 9:00 AM-9:00 PM</i></span>
           </address>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>&copy; {new Date().getFullYear()} Dr. Jadhavar Physiotherapy &amp; Rehabilitation Center.</span>
+        <span>&copy; {new Date().getFullYear()} Trijja Media Works</span>
         <span>All rights reserved.</span>
       </div>
     </div>

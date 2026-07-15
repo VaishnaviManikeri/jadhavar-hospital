@@ -162,25 +162,32 @@ export default function SuccessStory() {
         }
 
         .ss-hero {
-          background: var(--black);
-          color: var(--white);
-          padding: 90px 24px 70px;
+          background: linear-gradient(135deg, #f7fcfc 0%, #e8f7f6 55%, #f3fbfa 100%);
+          color: #173b3e;
+          padding: 104px 24px 92px;
           text-align: center;
           position: relative;
           overflow: hidden;
+          border-bottom: 1px solid #d7eeec;
         }
 
+        .ss-hero::before,
         .ss-hero::after {
           content: "";
           position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 6px;
-          background: linear-gradient(90deg, var(--teal), var(--teal-dark), var(--teal));
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          background: rgba(8, 163, 163, 0.08);
+          pointer-events: none;
         }
 
+        .ss-hero::before { top: -150px; left: -90px; }
+        .ss-hero::after { right: -100px; bottom: -170px; }
+
         .ss-eyebrow {
+          position: relative;
+          z-index: 1;
           color: var(--teal);
           letter-spacing: 3px;
           font-size: 13px;
@@ -190,33 +197,27 @@ export default function SuccessStory() {
         }
 
         .ss-hero h1 {
-          font-size: clamp(28px, 5vw, 48px);
-          font-weight: 800;
+          position: relative;
+          z-index: 1;
+          font-size: clamp(34px, 5vw, 58px);
+          font-weight: 400;
           margin: 0 0 16px;
-          line-height: 1.2;
+          line-height: 1.12;
+          color: #173b3e;
         }
 
         .ss-hero p {
+          position: relative;
+          z-index: 1;
           max-width: 640px;
           margin: 0 auto;
           font-size: 16px;
           font-weight: 400;
-          color: #d9d9d9;
-          line-height: 1.7;
+          color: #587174;
+          line-height: 1.8;
         }
 
         /* EKG signature divider — echoes vitals / recovery pulse */
-        .ss-pulse {
-          width: 100%;
-          background: var(--white);
-          padding: 28px 0 0;
-        }
-        .ss-pulse svg {
-          display: block;
-          width: 100%;
-          height: 40px;
-        }
-
         .ss-section {
           padding: 60px 24px 90px;
           max-width: 1180px;
@@ -420,19 +421,6 @@ export default function SuccessStory() {
       </section>
 
       {/* Signature pulse divider */}
-      <div className="ss-pulse">
-        <svg viewBox="0 0 1200 40" preserveAspectRatio="none">
-          <polyline
-            points="0,20 250,20 280,5 310,35 340,20 500,20 530,10 560,30 590,20 750,20 780,2 810,38 840,20 1000,20 1030,8 1060,32 1090,20 1200,20"
-            fill="none"
-            stroke="#08A3A3"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-
       {/* Stories */}
       <section className="ss-section">
         <div className="ss-grid">

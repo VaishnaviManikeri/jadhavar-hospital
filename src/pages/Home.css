@@ -8,29 +8,51 @@
   --text: #667477;
   font-family: 'Poppins', sans-serif;
   color: var(--navy);
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   background: #fff;
 }
 
 .home *, .home *::before, .home *::after { box-sizing: border-box; }
+.home img { max-width: 100%; }
 
 .home-hero {
   position: relative;
-  min-height: 650px;
+  min-height: 1060px;
   display: flex;
   padding: 60px 24px;
   isolation: isolate;
-  background-image: linear-gradient(90deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.88) 72%, #fff 100%), url('/assets/images/pratibha1.png');
+  background-image: linear-gradient(90deg, rgba(255,255,255,0) 34%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.88) 72%, #fff 100%), url('/assets/images/banner1.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.home-hero::after {
+  content: 'Dr. Pratibha Kendre Jadhavar';
+  position: absolute;
+  left: clamp(24px, 5vw, 72px);
+  bottom: clamp(8px, 2vw, 24px);
+  z-index: 3;
+  max-width: 290px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 16px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 18px 42px rgba(16, 47, 82, .16);
+  backdrop-filter: blur(14px);
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 800;
 }
 
 .hero-layout {
   position: relative;
   z-index: 2;
   width: min(1240px, 100%);
-  min-height: 554px;
+  min-height: 960px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -120,6 +142,11 @@
 @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(52,189,139,0); } 100% { box-shadow: 0 0 0 0 rgba(52,189,139,0); } }
 @keyframes morph { 0%,100% { border-radius: 48% 52% 45% 55% / 45% 38% 62% 55%; } 50% { border-radius: 42% 58% 55% 45% / 52% 46% 54% 48%; } }
 
+@media (max-width: 1200px) {
+  .home-hero { min-height: 950px; }
+  .hero-copy { width: min(600px, 58%); }
+}
+
 @media (max-width: 1000px) {
   .home-hero { min-height: 600px; background-position: 42% center; }
   .hero-copy { width: min(560px, 56%); }
@@ -131,7 +158,7 @@
   .home-hero {
     min-height: 680px;
     padding: 360px 20px 55px;
-    background-image: linear-gradient(180deg, rgba(255,255,255,0) 32%, rgba(255,255,255,.88) 55%, #fff 72%), url('/assets/images/pratibha.png');
+    background-image: linear-gradient(180deg, rgba(255,255,255,0) 32%, rgba(255,255,255,.88) 55%, #fff 72%), url('/assets/images/banner1.jpeg');
     background-position: 32% top;
     background-size: auto 100%;
   }
@@ -145,14 +172,131 @@
   .service-image-wrap { width: 80px; height: 92px; }
 }
 
+@media (max-width: 780px) {
+  .home-hero::after {
+    left: 20px;
+    bottom: 8px;
+    max-width: 240px;
+    padding: 13px 16px;
+    border-radius: 13px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 480px) {
   .home-hero { min-height: 650px; padding: 325px 16px 45px; background-position: 30% top; }
   .hero-copy h1 { letter-spacing: -1.5px; }
   .hero-specialities { font-size: 11px; }
-  .hero-actions { flex-direction: column; gap: 15px; }
+  .hero-actions { flex-direction: column; gap: 15px; align-items: stretch; }
+  .hero-actions a { justify-content: center; }
   .service-strip { padding-inline: 14px; }
   .service-card { grid-template-columns: 68px 1fr; padding: 18px 15px; }
   .service-image-wrap { width: 66px; height: 80px; }
+}
+
+@media (max-width: 480px) {
+  .home-hero::after {
+    left: 16px;
+    bottom: 6px;
+    max-width: 210px;
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-hero {
+    display: grid;
+    place-items: center;
+    min-height: 760px;
+    padding: 82px 18px 58px;
+    background-image: linear-gradient(180deg, rgba(8, 163, 163, .96), rgba(8, 163, 163, .96));
+  }
+
+  .hero-layout {
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-copy {
+    width: min(100%, 560px);
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    margin-inline: auto;
+    font-size: clamp(2.05rem, 10vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .hero-copy h1 span {
+    display: inline;
+  }
+
+  .hero-copy h1 span::before {
+    content: none;
+    display: none;
+  }
+
+  .hero-specialities {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    max-width: 100%;
+    margin: 26px auto 18px;
+    line-height: 1.8;
+    white-space: nowrap;
+    font-size: clamp(7.8px, 2.2vw, 9px);
+  }
+
+  .hero-specialities i {
+    flex: 0 0 3px;
+    width: 3px;
+    height: 3px;
+  }
+
+  .hero-lead {
+    max-width: 340px;
+    margin: 0 auto 18px;
+    text-align: center;
+    font-size: clamp(1.18rem, 5.4vw, 1.55rem);
+    line-height: 1.35;
+  }
+
+  .hero-description {
+    max-width: 340px;
+    margin-inline: auto;
+    text-align: justify;
+    text-align-last: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .hero-trust {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-hero {
+    min-height: 720px;
+    padding-inline: 14px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.78rem, 9.5vw, 2.35rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .home-hero { min-height: 600px; padding: 300px 12px 40px; }
+  .hero-copy h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); letter-spacing: -1px; }
+  .hero-description { font-size: 13px; }
+  .primary-action, .secondary-action { font-size: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -255,7 +399,7 @@
 .rehab-center { position: absolute; top: 5%; left: 50%; width: 30%; text-align: center; transform: translateX(-50%); }
 .rehab-circle { position: relative; width: 100%; aspect-ratio: 1; margin: 0 auto 18px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #e9f5ff, #c5e2f8); box-shadow: inset 0 0 0 14px #edf7ff, 0 0 0 2px #398bd2; }
 .rehab-circle::before { content: ''; position: absolute; inset: 27px; border: 2px solid #fff; border-radius: 50%; }
-.rehab-circle img { position: relative; z-index: 2; width: 84%; height: 84%; object-fit: contain; border-radius: 50%; }
+.rehab-circle img { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%; }
 .rehab-ring { position: absolute; border: 1px solid rgba(22, 113, 194, .25); border-radius: 50%; }
 .rehab-ring-one { inset: -17px; }
 .rehab-ring-two { inset: 12px; }
@@ -283,12 +427,35 @@
   .rehab-center { grid-row: 1; }
   .rehab-list-left { grid-row: 2; }
   .rehab-list-right { grid-row: 3; }
-  .rehab-list-left .rehab-item, .rehab-list-right .rehab-item { justify-content: flex-start; text-align: left; }
-  .rehab-list-left .rehab-item { flex-direction: row-reverse; justify-content: flex-end; }
+  .rehab-list-left .rehab-item, .rehab-list-right .rehab-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    justify-content: stretch;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+  .rehab-list-left .rehab-item { flex-direction: row; justify-content: stretch; }
+  .rehab-list-left .rehab-icon,
+  .rehab-list-right .rehab-icon { grid-column: 1; grid-row: 1; }
+  .rehab-list-left .rehab-item-copy,
+  .rehab-list-right .rehab-item-copy {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: none;
+    min-width: 0;
+  }
   .rehab-list-left .rehab-item::after, .rehab-list-right .rehab-item::after { left: 28px; right: auto; transform: none; }
   .rehab-item-copy h3 { font-size: 15px; }
-  .rehab-item-copy p { font-size: 11px; }
+  .rehab-item-copy p { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .rehab-icon { flex-basis: 56px; width: 56px; height: 56px; }
+}
+
+@media (max-width: 380px) {
+  .rehab-center h2 { font-size: 1.55rem; }
+  .rehab-tagline { font-size: 12px; }
+  .rehab-item-copy { max-width: 100%; }
 }
 
 /* ==========================================================================
@@ -441,17 +608,17 @@ width: min(1400px, 100%);
 .healthcare-doctor {
   position: absolute;
   z-index: 2;
-  right: 30px;
-  bottom: 98px;
-  width: 335px;
-  height: 420px;
+  right: 5px;
+  bottom: 82px;
+  width: 500px;
+  height: 500px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
 .healthcare-doctor img {
-  width: 100%;
+  width: 170%;
   height: 100%;
   display: block;
   object-fit: contain;
@@ -526,10 +693,10 @@ width: min(1400px, 100%);
   }
 
   .healthcare-doctor {
-    right: 30px;
-    bottom: 98px;
-    width: 300px;
-    height: 360px;
+    right: 10px;
+    bottom: 88px;
+    width: 380px;
+    height: 430px;
   }
 }
 
@@ -576,9 +743,9 @@ width: min(1400px, 100%);
   .healthcare-doctor {
     position: absolute;
     right: 50%;
-    bottom: 70px;
-    width: 280px;
-    height: 300px;
+    bottom: 62px;
+    width: 330px;
+    height: 350px;
     transform: translateX(50%);
   }
 
@@ -598,9 +765,15 @@ width: min(1400px, 100%);
   }
 
   .healthcare-doctor {
-    width: 235px;
-    height: 270px;
+    width: 285px;
+    height: 320px;
   }
+}
+
+@media (max-width: 380px) {
+  .healthcare-services-copy h2 { font-size: clamp(1.5rem, 8vw, 2rem); }
+  .healthcare-doctor { width: 230px; height: 260px; bottom: 45px; }
+  .healthcare-services-layout { padding-bottom: 260px; }
 }
 
 /* ==========================================================================
@@ -623,7 +796,7 @@ width: min(1400px, 100%);
 
 .center-collage {
   position: relative;
-  min-height: 500px;
+  min-height: 650px;
   order: 2;
 }
 
@@ -631,7 +804,8 @@ width: min(1400px, 100%);
 
 .collage-main {
   position: absolute;
-  inset: 0 112px 70px 0;
+  inset: 45px 40px 130px 0;
+  transform: translateX(-45px);
   overflow: hidden;
   border-radius: 28px;
   background: #dceeff;
@@ -652,7 +826,7 @@ width: min(1400px, 100%);
   position: absolute;
   z-index: 2;
   width: 62%;
-  height: 205px;
+  height: 285px;
   right: 0;
   bottom: 0;
   overflow: hidden;
@@ -704,7 +878,7 @@ width: min(1400px, 100%);
 .center-benefits { display: grid; gap: 13px; margin-top: 24px; color: #506578; font-size: 13px; }
 .center-benefits span { display: flex; align-items: center; gap: 10px; }
 .center-benefits svg { color: #17aa92; }
-.center-actions { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+.center-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
 .center-about-btn, .center-play-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 12px; font-weight: 600; transition: .3s ease; }
 .center-about-btn { padding: 13px 19px; border-radius: 9px; color: #fff; background: #155d91; box-shadow: 0 10px 23px rgba(21, 93, 145, .2); }
 .center-about-btn:hover { color: #fff; transform: translateY(-3px); background: #0f4c79; }
@@ -805,7 +979,7 @@ width: min(1400px, 100%);
 .home-conditions-strip {
   position: relative;
   z-index: 2;
-  padding: 90px 24px 80px;
+  padding: 150px 24px 80px;
   background: #fff;
 }
 
@@ -816,7 +990,7 @@ width: min(1400px, 100%);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 38px 18px;
-  padding: 22px 34px 42px;
+  padding: 42px 34px 70px;
   isolation: isolate;
 }
 
@@ -824,7 +998,7 @@ width: min(1400px, 100%);
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 54px 0 0;
+  inset: 72px 0 0;
   border-radius: 58px 0 58px 0;
   background: linear-gradient(135deg, #073c68 0%, #07517d 100%);
   box-shadow: 0 24px 50px rgba(7, 60, 104, .16);
@@ -836,8 +1010,8 @@ width: min(1400px, 100%);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 132px;
-  padding: 37px 16px 20px;
+  min-height: 165px;
+  padding: 48px 16px 28px;
   text-align: center;
   border: 1px solid rgba(16, 47, 82, .06);
   border-radius: 18px 2px 28px 2px;
@@ -883,7 +1057,7 @@ width: min(1400px, 100%);
 
 .home-condition-grid-description {
   grid-column: 1 / -1;
-  padding: 14px 34px 20px;
+  padding: 24px 34px 28px;
   text-align: center;
   color: #ffffff;
 }
@@ -984,6 +1158,7 @@ width: min(1400px, 100%);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding: 0;
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 10px 24px rgba(20, 70, 120, .06);
@@ -1060,6 +1235,23 @@ width: min(1400px, 100%);
   line-height: 1.5;
 }
 
+/* Keep home-page treatment cards isolated from Treatment.css. */
+.treatments-strip .treatment-card {
+  padding: 0;
+}
+
+.treatments-strip .treatment-image-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.treatments-strip .treatment-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Remove number styling */
 .treatment-index {
   display: none;
@@ -1091,7 +1283,7 @@ width: min(1400px, 100%);
     gap: 12px;
   }
   .treatment-info {
-    padding: 10px 12px 14px;
+    padding: 8px 10px 11px;
   }
   .treatment-title {
     font-size: 12px;
@@ -1120,7 +1312,7 @@ width: min(1400px, 100%);
     padding-top: 60%;
   }
   .treatment-info {
-    padding: 12px 14px 16px;
+    padding: 8px 10px 12px;
   }
   .treatment-title {
     font-size: 14px;
@@ -1138,14 +1330,14 @@ width: min(1400px, 100%);
 .care-programs-heading { width: min(760px,100%); margin: 0 auto 55px; text-align: center; }
 .care-programs-heading h2 { margin: 12px 0 13px; color: var(--navy); font-size: clamp(2rem,4vw,3.5rem); line-height: 1.1; letter-spacing: -2px; }
 .care-programs-heading > p { margin: 0 auto; color: var(--text); font-size: 13px; line-height: 1.8; }
-.care-program-grid { position: relative; z-index: 1; width: min(980px,100%); margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); align-items: end; gap: 22px; }
-.care-program-card { position: relative; padding-top: 165px; border: 1px solid #e0ecec; background: #fff; box-shadow: 0 18px 42px rgba(20,70,83,.12); transition: transform .3s ease,box-shadow .3s ease; }
+.care-program-grid { position: relative; z-index: 1; width: min(975px,100%); margin: 0 auto; display: grid; grid-template-columns: repeat(3,minmax(0,310px)); justify-content: center; align-items: end; gap: 18px; }
+.care-program-card { position: relative; min-height: 505px; padding-top: 195px; border: 1px solid #e0ecec; background: #fff; box-shadow: 0 18px 42px rgba(20,70,83,.12); transition: transform .3s ease,box-shadow .3s ease; }
 .care-program-card:hover { transform: translateY(-8px); box-shadow: 0 25px 55px rgba(20,70,83,.17); }
 .care-program-card.featured { color: #fff; border-color: #087f80; background: linear-gradient(155deg,#0b5970,#087f80); transform: translateY(-18px); }
 .care-program-card.featured:hover { transform: translateY(-26px); }
-.care-program-image { position: absolute; top: 0; right: 0; left: 0; height: 180px; display: grid; place-items: center; overflow: hidden; background: linear-gradient(180deg,#f6fbfb,#fff); }
-.care-program-image img { width: 145px; height: 145px; object-fit: contain; }
-.care-program-body { position: relative; z-index: 2; min-height: 250px; padding: 25px 25px 23px; }
+.care-program-image { position: absolute; top: 0; right: 0; left: 0; height: 210px; display: grid; place-items: center; overflow: hidden; background: linear-gradient(180deg,#f6fbfb,#fff); }
+.care-program-image img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
+.care-program-body { position: relative; z-index: 2; min-height: 275px; padding: 24px 24px 20px; }
 .care-program-label { position: absolute; top: -15px; left: -5px; padding: 8px 25px 8px 17px; color: #fff; background: #08a3a3; clip-path: polygon(0 0,100% 0,86% 100%,0 100%); font-size: 10px; font-weight: 800; }
 .care-program-card.featured .care-program-label { color: #064b59; background: #84e0dc; }
 .care-program-body h3 { margin: 12px 0 16px; color: var(--navy); font-size: 17px; }
@@ -1402,8 +1594,13 @@ width: min(1400px, 100%);
    Responsive overrides for new sections
    ========================================================================== */
 
+@media (max-width: 1050px) {
+  .faq-intro { position: static; top: auto; }
+}
+
 @media (max-width: 1000px) {
   .center-intro-layout { grid-template-columns: 1fr; width: min(680px, 100%); }
+  .collage-main { transform: none; }
   .center-intro-copy { text-align: center; }
   .center-kicker, .center-specialities, .center-benefits span, .center-actions { justify-content: center; }
   .center-summary { margin-inline: auto; }
@@ -1416,7 +1613,7 @@ width: min(1400px, 100%);
   .home-condition-grid { grid-template-columns: repeat(3, 1fr); }
   .treatment-grid { grid-template-columns: repeat(2, 1fr); }
   .faq-layout { grid-template-columns: 1fr; gap: 35px; }
-  .care-program-grid { width: min(760px,100%); grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .care-program-grid { width: min(855px,100%); grid-template-columns: repeat(3,minmax(0,275px)); gap: 12px; }
   .care-program-body { padding-inline: 18px; }
   .faq-intro { position: static; max-width: 650px; text-align: center; margin: 0 auto; }
   .faq-intro .eyebrow { justify-content: center; }
@@ -1424,7 +1621,7 @@ width: min(1400px, 100%);
 
 @media (max-width: 780px) {
   .center-intro { padding: 75px 20px 90px; }
-  .center-collage { min-height: 450px; }
+  .center-collage { min-height: 540px; }
   .showcase-strip { padding: 0; }
   .home-conditions-strip, .treatments-strip { padding-inline: 20px; }
   .home-condition-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1438,23 +1635,38 @@ width: min(1400px, 100%);
 
 @media (max-width: 480px) {
   .center-intro { padding-inline: 16px; }
-  .center-collage { min-height: 370px; }
-  .collage-main { inset: 0 50px 58px 0; border-radius: 20px; }
-  .collage-secondary { width: 72%; height: 145px; border-width: 5px; }
+  .center-collage { min-height: 460px; }
+  .collage-main { inset: 0 50px 78px 0; border-radius: 20px; }
+  .collage-secondary { width: 72%; height: 190px; border-width: 5px; }
   .collage-seal { width: 72px; height: 72px; right: 24px; top: 35px; }
   .collage-seal span { font-size: 6px; }
   .center-intro-copy h2 { letter-spacing: -1px; }
   .center-actions { flex-wrap: wrap; }
   .center-stat { width: 100%; }
   .home-condition-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .home-condition-grid { padding: 22px 14px 30px; gap: 34px 12px; }
-  .home-condition-grid::before { top: 48px; border-radius: 32px 0 32px 0; }
-  .home-condition-card { min-height: 118px; padding: 34px 10px 16px; }
-  .home-condition-grid-description { padding: 14px 5px 18px; }
+  .home-condition-grid { padding: 36px 14px 48px; gap: 34px 12px; }
+  .home-condition-grid::before { top: 62px; border-radius: 32px 0 32px 0; }
+  .home-condition-card { min-height: 142px; padding: 42px 10px 22px; }
+  .home-condition-grid-description { padding: 20px 5px 24px; }
   .home-condition-grid-description p { font-size: 12px; line-height: 1.75; }
-  .treatment-card { min-height: 180px; padding: 22px 18px 20px; }
+  .treatment-card { min-height: 180px; padding: 0; }
   .faq-question { min-height: 64px; padding: 15px 16px; }
   .faq-answer { padding: 0 44px 18px; }
+}
+
+@media (max-width: 600px) {
+  .treatment-card {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .center-collage { min-height: 380px; }
+  .collage-main { inset: 0 30px 65px 0; }
+  .collage-secondary { width: 78%; height: 155px; }
+  .home-condition-grid { grid-template-columns: 1fr; }
+  .care-program-image { height: 150px; }
+  .care-program-image img { width: 120px; height: 120px; }
 }
 
 /* Logo-based teal and charcoal brand theme */
@@ -1498,8 +1710,85 @@ width: min(1400px, 100%);
 }
 .home-hero,
 .hero-section {
-  margin-top: 36px;
+  margin-top: 60px;
   padding-top: 0;
+}
+
+/* Full-width home page content wrappers */
+.home,
+.home > section,
+.hero-layout,
+.service-cards,
+.rehab-overview-layout,
+.healthcare-services-layout,
+.center-intro-layout,
+.showcase-layout,
+.section-heading,
+.home-condition-grid,
+.treatment-slider,
+.treatment-grid,
+.care-programs-heading,
+.care-program-grid,
+.clinic-highlight-inner,
+.faq-layout {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+}
+
+.home > section {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 780px) {
+  .home > section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-layout,
+  .center-intro-layout,
+  .rehab-overview-layout,
+  .healthcare-services-layout,
+  .treatment-slider,
+  .faq-layout {
+    min-width: 0;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .section-heading h2,
+  .center-intro-copy h2,
+  .care-programs-heading h2,
+  .faq-intro h2 {
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home > section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-heading h2,
+  .center-intro-copy h2,
+  .care-programs-heading h2,
+  .faq-intro h2 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+    line-height: 1.18;
+  }
+
+  .section-heading p,
+  .center-summary,
+  .care-programs-heading > p,
+  .faq-intro > p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
 }
 .healthcare-services {
   width: 100vw !important;
@@ -1530,4 +1819,20 @@ width: min(1400px, 100%);
     margin-inline: 0 !important;
     transform: translateX(-50%);
   }
+}
+.treatments .section-image,
+.treatments .section-image img,
+.treatments .section-visual,
+.treatments .section-visual img,
+.treatments .treatment-image,
+.treatments .treatment-image img,
+#treatments .section-image,
+#treatments .section-image img,
+#treatments .section-visual,
+#treatments .section-visual img,
+#treatments .treatment-image,
+#treatments .treatment-image img {
+  width: min(100%, 620px);
+  max-height: 520px;
+  object-fit: cover;
 }

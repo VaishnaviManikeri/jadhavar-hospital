@@ -1,18 +1,18 @@
 import React from 'react';
 import { FaUserMd, FaMicrochip, FaClipboardList, FaFlask, FaShieldAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
   return (
     <div className="about-container">
       {/* Hero Section */}
+      <div className="about-hero-heading">
+        <span>About Dr. Jadhavar</span>
+        <h1 className="about-title" id="about-hero-title">Expert care for a stronger, pain-free life.</h1>
+      </div>
       <section className="about-hero" aria-labelledby="about-hero-title">
-        <img className="about-hero-image" src="/assets/images/about-hero-spine-care-v2.png" alt="Physiotherapist assessing a patient's neck beside an anatomical spine model" />
-        <div className="about-hero-shade" aria-hidden="true" />
-        <div className="about-hero-heading">
-          <span>About Dr. Jadhavar</span>
-          <h1 className="about-title" id="about-hero-title">Expert care for a stronger, pain-free life.</h1>
-        </div>
+        <img className="about-hero-image" src="/assets/images/ab1.png" alt="Physiotherapist assessing a patient's neck beside an anatomical spine model" />
         <div className="about-hero-cards">
           <article className="about-hero-card primary-card">
             <span>01</span><h2>Personalized Recovery</h2>
@@ -32,7 +32,7 @@ const About = () => {
           <div className="about-reel-section">
             <div className="reel-container">
               <iframe
-                src="https://www.instagram.com/reel/DZ4lU6Ti11o/embed"
+                src="https://www.instagram.com/p/Dacz0RzkoZ8/embed"
                 frameBorder="0"
                 allowFullScreen
                 scrolling="no"
@@ -135,7 +135,7 @@ const About = () => {
                 Experience the difference of personalized, evidence-based physiotherapy care at 
                 Dr. Jadhavar Physiotherapy & Rehabilitation Center.
               </p>
-              <button className="cta-button">Book an Appointment</button>
+              <Link to="/appointment" className="cta-button">Book an Appointment</Link>
             </div>
           </div>
         </div>

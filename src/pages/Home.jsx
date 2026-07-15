@@ -18,6 +18,7 @@ import {
   FaChild,
 } from 'react-icons/fa6';
 import './Home.css';
+import './HomeResponsive.css';
 import PhysioChatbot from '../components/PhysioChatbot';
 
 const services = [
@@ -163,6 +164,36 @@ const clinicHighlights = [
   },
 ];
 
+const doctorLedCare = [
+  {
+    icon: <FaHandHoldingMedical />,
+    title: 'Detailed Physiotherapy Assessment',
+    text: 'Every recovery plan begins with a careful evaluation of pain, posture, strength, mobility, and daily activity needs.',
+  },
+  {
+    icon: <FaBriefcaseMedical />,
+    title: 'Personalized Treatment Planning',
+    text: 'Treatment is planned around your condition, comfort level, lifestyle, and long-term movement goals.',
+  },
+  {
+    icon: <FaPersonWalking />,
+    title: 'Guided Exercise & Rehabilitation',
+    text: 'Patients receive progressive exercises and one-to-one guidance to restore function with confidence.',
+  },
+  {
+    icon: <FaBolt />,
+    title: 'Modern Pain Relief Techniques',
+    text: 'Advanced modalities and hands-on care are used to reduce pain, improve healing, and support faster recovery.',
+  },
+];
+
+const recoveryJourney = [
+  'Consultation and movement assessment',
+  'Pain relief and mobility restoration',
+  'Strength, balance, and posture training',
+  'Return-to-activity guidance and prevention',
+];
+
 const faqs = [
   { question: 'How many physiotherapy sessions will I need?', answer: 'The number of sessions depends on your condition, its severity, and your recovery goals. After the initial assessment, your physiotherapist will recommend a personalized treatment plan and review your progress regularly.' },
   { question: "Do I need a doctor's referral?", answer: 'A referral is usually not required to book a physiotherapy consultation. If your condition needs medical investigation or specialist input, we will guide you to the appropriate healthcare professional.' },
@@ -251,7 +282,7 @@ const Home = () => {
           <div className="hero-copy">
             <div className="eyebrow"><span /> Trusted Physiotherapy Care</div>
             <h1 id="home-title">
-              Dr. Jadhavar <span>Physiotherapy</span> &amp; Rehabilitation Center
+              Dr. Jadhavar <span>Physiotherapy</span> and Rehabilitation Center
             </h1>
             <p className="hero-specialities">
               Advanced Physiotherapy <i /> Sports Injury <i /> Pain Relief <i /> Rehabilitation
@@ -266,7 +297,7 @@ const Home = () => {
               <a href="/appointment" className="primary-action">
                 Book an Appointment <FaArrowRight />
               </a>
-              <a href="#services" className="secondary-action">
+              <a href="/treatments" className="secondary-action">
                 <span><FaPlay /></span> Explore Our Care
               </a>
             </div>
@@ -278,6 +309,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
 
       <section className="service-strip" id="services" aria-label="Our physiotherapy services">
         <div className="service-cards">
@@ -301,10 +333,10 @@ const Home = () => {
         <div className="center-intro-layout">
           <div className="center-collage" aria-label="Physiotherapy care at Dr. Jadhavar Center">
             <div className="collage-main">
-              <img src="/assets/images/h22.jpg" alt="Physiotherapy specialist providing expert care" loading="lazy" />
+              <img src="/assets/images/ab2.png" alt="Physiotherapy specialist providing expert care" loading="lazy" />
             </div>
             <div className="collage-secondary">
-              <img src="/assets/images/h222.jpg" alt="Patient receiving physiotherapy rehabilitation" loading="lazy" />
+              <img src="/assets/images/ab1.png" alt="Patient receiving physiotherapy rehabilitation" loading="lazy" />
             </div>
           
           </div>
@@ -330,14 +362,47 @@ const Home = () => {
             </div>
 
             <div className="center-actions">
-              <a href="#services" className="center-about-btn">Explore Services <FaArrowRight /></a>
+              <a href="/treatment" className="center-about-btn">Explore Services <FaArrowRight /></a>
               <a href="/appointment" className="center-play-btn"><i><FaPlay /></i> Book Appointment</a>
-              <div className="center-stat">
+              {/* <div className="center-stat">
                 <FaPlus />
                 <strong>4</strong>
                 <span>Core Care Areas</span>
-              </div>
+              </div> */}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="doctor-led-section" aria-labelledby="doctor-led-title">
+        <div className="doctor-led-inner">
+          <div className="doctor-led-copy">
+            <div className="eyebrow"><span /> Doctor-Led Rehabilitation</div>
+            <h2 id="doctor-led-title">
+              Personalized care by <span>Dr. Pratibha Kendre Jadhavar</span>
+            </h2>
+            <p>
+              At Dr. Jadhavar Physiotherapy &amp; Rehabilitation Center, every patient receives
+              focused attention, clear guidance, and a structured recovery plan. Our approach
+              combines clinical assessment, pain-relief therapies, hands-on treatment, and
+              progressive exercise so recovery feels practical, steady, and goal-oriented.
+            </p>
+
+            <div className="doctor-led-points">
+              {recoveryJourney.map((point, index) => (
+                <span key={point}><i>{index + 1}</i>{point}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="doctor-led-grid" aria-label="Doctor-led physiotherapy care highlights">
+            {doctorLedCare.map((item) => (
+              <article className="doctor-led-card" key={item.title}>
+                <span>{item.icon}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -364,7 +429,7 @@ const Home = () => {
             <div className="rehab-circle">
               <span className="rehab-ring rehab-ring-one" aria-hidden="true" />
               <span className="rehab-ring rehab-ring-two" aria-hidden="true" />
-              <img src="/assets/images/h22.jpg" alt="Physiotherapy and rehabilitation specialist" loading="lazy" />
+              <img src="/assets/images/ab1.png" alt="Physiotherapy and rehabilitation specialist" loading="lazy" />
             </div>
             <h2 id="rehab-overview-title">Physiotherapy &amp;<br />Rehabilitation</h2>
             <span className="rehab-title-line" aria-hidden="true"><i /><i /><i /></span>
@@ -411,7 +476,7 @@ const Home = () => {
           </div>
 
           <div className="healthcare-doctor">
-            <img src="/assets/images/dr11.png" alt="Physiotherapy doctor at Dr. Jadhavar Rehabilitation Center" loading="lazy" />
+            <img src="/assets/images/about.jpeg" alt="Physiotherapy doctor at Dr. Jadhavar Rehabilitation Center" loading="lazy" />
           </div>
         </div>
         <div className="healthcare-pulse-line" aria-hidden="true">
@@ -527,7 +592,7 @@ const Home = () => {
                 <span className="care-program-label">{program.label}</span>
                 <h3>{program.title}</h3>
                 <ul>{program.points.map((point) => <li key={point}>{point}</li>)}</ul>
-                <a href="#appointment">Discover More <FaArrowRight /></a>
+                <a href="/treatment">Discover More <FaArrowRight /></a>
               </div>
             </article>
           ))}

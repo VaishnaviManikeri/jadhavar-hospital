@@ -153,8 +153,25 @@
 
     <meta name="theme-color" content="#08a3a3" />
 </head>
-<body>
+  <body>
     <div id="root"></div>
+    <script>
+      document.addEventListener('click', function (event) {
+        var trigger = event.target.closest('a, button');
+        if (!trigger) return;
+
+        if (trigger.textContent.trim().replace(/\s+/g, ' ') === 'Book an Appointment') {
+          event.preventDefault();
+          window.location.href = '/appointment';
+        }
+
+        if (trigger.textContent.trim().replace(/\s+/g, ' ').toLowerCase().includes('emergency')) {
+          event.preventDefault();
+          window.location.href = 'tel:+917700995363';
+        }
+      });
+
+    </script>
     <script type="module" src="/src/main.jsx"></script>
-</body>
+  </body>
 </html>

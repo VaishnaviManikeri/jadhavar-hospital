@@ -13,6 +13,7 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 import { GiSpineArrow } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 import './Treatment.css';
 
 const Treatments = () => {
@@ -24,6 +25,7 @@ const Treatments = () => {
       icon: <FaSun />,
       title: "Class IV Laser Therapy",
       description: "High-power laser therapy that penetrates deep into tissues to reduce inflammation, accelerate healing, and provide rapid pain relief for acute and chronic conditions.",
+      brief: "This focused treatment delivers therapeutic light energy to the affected area, supporting cellular repair and helping patients recover comfortably without injections or downtime.",
       benefits: [
         "Non-invasive pain relief",
         "Accelerates tissue repair",
@@ -39,6 +41,7 @@ const Treatments = () => {
       icon: <FaBolt />,
       title: "IFT Therapy",
       description: "Interferential Therapy uses medium-frequency electrical currents to stimulate deep tissues, providing effective pain relief and promoting muscle recovery.",
+      brief: "Two gentle electrical currents intersect around the painful area to reach deeper tissues, ease muscle guarding, and improve local circulation during recovery.",
       benefits: [
         "Deep tissue stimulation",
         "Effective pain management",
@@ -54,6 +57,7 @@ const Treatments = () => {
       icon: <FaWaveSquare />,
       title: "TENS Therapy",
       description: "Transcutaneous Electrical Nerve Stimulation uses low-voltage electrical currents to block pain signals and stimulate endorphin production for natural pain relief.",
+      brief: "Small electrode pads deliver controlled impulses near the painful region, helping reduce the way pain signals travel while encouraging the body's natural pain-relief response.",
       benefits: [
         "Drug-free pain relief",
         "Endorphin stimulation",
@@ -69,6 +73,7 @@ const Treatments = () => {
       icon: <FaSoundcloud />,
       title: "Ultrasound Therapy",
       description: "Therapeutic ultrasound uses high-frequency sound waves to penetrate deep tissues, promoting healing and reducing inflammation in muscles, tendons, and ligaments.",
+      brief: "A handheld applicator delivers sound-wave energy into injured soft tissue to support circulation, tissue mobility, and recovery from strains or overuse injuries.",
       benefits: [
         "Deep tissue heating",
         "Reduces inflammation",
@@ -84,6 +89,7 @@ const Treatments = () => {
       icon: <FaThermometerHalf />,
       title: "Long Wave Diathermy",
       description: "Deep heating therapy using electromagnetic waves to increase blood flow, reduce pain, and promote healing in deep tissues and joints.",
+      brief: "Comfortable deep warmth helps relax tight structures and prepare stiff muscles or joints for manual therapy, stretching, and therapeutic exercise.",
       benefits: [
         "Deep tissue heating",
         "Increased blood flow",
@@ -99,6 +105,7 @@ const Treatments = () => {
       icon: <GiSpineArrow />,
       title: "Cervical Traction",
       description: "A therapeutic technique that gently stretches the cervical spine to relieve pressure on spinal discs, reduce nerve compression, and alleviate neck pain.",
+      brief: "Traction is applied gradually and according to your assessment to create space through the neck, helping relieve radiating pain, stiffness, or nerve irritation.",
       benefits: [
         "Relieves neck pain",
         "Reduces nerve compression",
@@ -114,6 +121,7 @@ const Treatments = () => {
       icon: <GiSpineArrow />,
       title: "Lumbar Traction",
       description: "A specialized treatment that decompresses the lumbar spine, reducing pressure on spinal discs and nerves to provide relief from lower back pain.",
+      brief: "Controlled decompression gently separates the lower spinal segments, which may reduce pressure-related symptoms and make movement more comfortable.",
       benefits: [
         "Reduces lower back pain",
         "Decompresses spine",
@@ -129,6 +137,7 @@ const Treatments = () => {
       icon: <FaHands />,
       title: "Manual Therapy",
       description: "Hands-on therapeutic techniques including joint mobilization, soft tissue manipulation, and massage to improve function, reduce pain, and restore mobility.",
+      brief: "Your physiotherapist selects specific hands-on techniques after assessment to address restricted joints, tight muscles, and movement patterns contributing to pain.",
       benefits: [
         "Improves joint mobility",
         "Reduces muscle tension",
@@ -144,6 +153,7 @@ const Treatments = () => {
       icon: <FaDumbbell />,
       title: "Exercise Therapy",
       description: "Customized exercise programs designed to strengthen muscles, improve flexibility, and restore function specific to each patient's condition and goals.",
+      brief: "Exercises are progressed at a safe pace and taught with correct technique so improvements in strength, control, balance, and confidence carry into daily life.",
       benefits: [
         "Builds strength",
         "Improves flexibility",
@@ -159,6 +169,7 @@ const Treatments = () => {
       icon: <FaSyringe />,
       title: "Dry Needling",
       description: "A modern technique using thin filiform needles to release myofascial trigger points, reduce muscle tension, and promote natural healing mechanisms.",
+      brief: "After clinical screening, fine sterile needles are placed into selected trigger points to reduce localized tightness and improve comfortable movement.",
       benefits: [
         "Releases trigger points",
         "Reduces muscle pain",
@@ -174,6 +185,7 @@ const Treatments = () => {
       icon: <FaTape />,
       title: "Kinesiology Taping",
       description: "A therapeutic taping technique that provides support and stability to muscles and joints without restricting movement, promoting natural healing.",
+      brief: "Flexible therapeutic tape is applied in a condition-specific pattern to support movement, improve body awareness, and reduce strain during activity.",
       benefits: [
         "Joint support",
         "Muscle stabilization",
@@ -240,8 +252,6 @@ const Treatments = () => {
             <div 
               key={treatment.id}
               className="treatment-card"
-              onMouseEnter={() => setActiveTreatment(treatment.id)}
-              onMouseLeave={() => setActiveTreatment(null)}
               style={{ 
                 borderBottom: `4px solid ${treatment.color}`,
                 transform: activeTreatment === treatment.id ? 'translateY(-10px)' : 'translateY(0)'
@@ -253,7 +263,11 @@ const Treatments = () => {
               <h3 className="treatment-title">{treatment.title}</h3>
               <p className="treatment-description">{treatment.description}</p>
               
-              <div className={`treatment-details ${activeTreatment === treatment.id ? 'active' : ''}`}>
+              <div
+                id={`treatment-details-${treatment.id}`}
+                className={`treatment-details ${activeTreatment === treatment.id ? 'active' : ''}`}
+              >
+                <p className="treatment-brief">{treatment.brief}</p>
                 <div className="benefits-list">
                   <h4>Key Benefits:</h4>
                   <ul>
@@ -272,8 +286,15 @@ const Treatments = () => {
                 </div>
               </div>
               
-              <button className="learn-more-btn" style={{ background: treatment.color }}>
-                Learn More <FaChevronRight />
+              <button
+                type="button"
+                className="learn-more-btn"
+                style={{ background: treatment.color }}
+                aria-expanded={activeTreatment === treatment.id}
+                aria-controls={`treatment-details-${treatment.id}`}
+                onClick={() => setActiveTreatment(activeTreatment === treatment.id ? null : treatment.id)}
+              >
+                {activeTreatment === treatment.id ? 'Show Less' : 'Learn More'} <FaChevronRight />
               </button>
             </div>
           ))}
@@ -286,8 +307,8 @@ const Treatments = () => {
           <h2>Ready to Start Your Recovery?</h2>
           <p>Book your consultation today and experience the difference of personalized, evidence-based physiotherapy.</p>
           <div className="cta-buttons">
-            <button className="primary-btn">Book Appointment</button>
-            <button className="secondary-btn">Call Now: 7700995363</button>
+            <Link to="/appointment" className="primary-btn">Book Appointment</Link>
+            <a href="tel:+917700995363" className="secondary-btn">Call Now: 7700995363</a>
           </div>
         </div>
       </div>

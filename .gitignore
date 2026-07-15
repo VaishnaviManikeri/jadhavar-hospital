@@ -3,6 +3,11 @@
 # ==========================
 node_modules/
 
+# Build archives (GitHub rejects oversized generated ZIP files)
+dist.zip
+*.zip
+
+
 
 
 # ==========================

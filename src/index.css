@@ -374,3 +374,36 @@ footer [class*="wrapper" i] {
 .footer-brand-copy {
   padding-left: 24px;
 }
+
+/* Wider page sections across the site */
+:root {
+  --site-section-width: min(1440px, 100%);
+}
+
+main > section > :where(
+  [class*="container" i],
+  [class*="wrapper" i],
+  [class*="inner" i],
+  [class*="layout" i],
+  [class*="content" i],
+  [class*="grid" i],
+  [class*="cards" i]
+),
+main > div > section > :where(
+  [class*="container" i],
+  [class*="wrapper" i],
+  [class*="inner" i],
+  [class*="layout" i],
+  [class*="content" i],
+  [class*="grid" i],
+  [class*="cards" i]
+) {
+  width: var(--site-section-width) !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 1500px) {
+  :root {
+    --site-section-width: min(1520px, 100%);
+  }
+}

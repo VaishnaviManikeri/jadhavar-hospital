@@ -67,6 +67,10 @@ export const updateBlog = (id, data) =>
 export const deleteBlog = (id) => 
   api.delete(`/blogs/${id}`);
 
+// Appointment API
+export const bookAppointment = (formData) => 
+  api.post('/appointments', formData);
+
 // Notice APIs
 // export const getNotices = () => 
 //   api.get('/notices');

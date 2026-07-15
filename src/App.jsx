@@ -27,6 +27,8 @@ import BlogAdmin from './pages/admin/BlogAdmin';
 import ProtectedRoute from './components/ProtectedRoute';
 
 import './App.css';
+import './styles/mobileHero.css';
+import './styles/responsive.css';
 
 function App() {
   return (

@@ -46,7 +46,7 @@ export default function Contact() {
 
         .ct-page {
           font-family: 'Poppins', sans-serif;
-          background: var(--white);
+          background: #f7fbfb;
           color: var(--black);
           margin: 0;
           padding: 0;
@@ -56,8 +56,8 @@ export default function Contact() {
         .ct-banner {
           position: relative;
           width: 100%;
-          height: 480px;
-          background: url('/assets/images/contact.png') center/cover no-repeat, var(--black);
+          min-height: 500px;
+          background: url('/assets/images/contact.png') center 42%/cover no-repeat, #075b68;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -67,59 +67,72 @@ export default function Contact() {
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(8,163,163,0.55) 100%);
+          background: linear-gradient(90deg, rgba(4,45,52,.82) 0%, rgba(6,91,101,.65) 48%, rgba(8,163,163,.28) 100%);
         }
 
         .ct-banner-content {
           position: relative;
-          text-align: center;
+          width: min(1180px, calc(100% - 48px));
+          text-align: left;
           color: var(--white);
           padding: 0 20px;
         }
 
         .ct-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          padding: 8px 14px;
+          border: 1px solid rgba(255,255,255,.32);
+          border-radius: 999px;
+          background: rgba(255,255,255,.1);
+          backdrop-filter: blur(8px);
           letter-spacing: 3px;
           font-size: 13px;
           font-weight: 600;
           text-transform: uppercase;
           color: var(--teal-tint);
           margin-bottom: 12px;
-          font-color: #ffffff;
         }
 
         .ct-banner-content h1 {
-          font-size: clamp(28px, 5vw, 44px);
-          font-color: #ffffff;
-          font-weight: 800;
+          max-width: 650px;
+          font-size: clamp(42px, 6vw, 72px);
+          color: #ffffff;
+          font-weight: 700;
+          line-height: 1.05;
           margin: 0;
         }
 
         .ct-banner-content p {
-          margin-top: 10px;
+          max-width: 590px;
+          margin-top: 18px;
           font-weight: 400;
-          font-size: 15px;
-          color: #ffffff;
+          font-size: clamp(15px, 1.6vw, 18px);
+          line-height: 1.7;
+          color: rgba(255,255,255,.9);
         }
 
         /* Layout */
         .ct-section {
           max-width: 1180px;
           margin: 0 auto;
-          padding: 70px 24px 90px;
+          padding: 84px 24px 96px;
           display: grid;
           grid-template-columns: 1fr 1.2fr;
-          gap: 50px;
+          gap: clamp(36px, 6vw, 72px);
+          align-items: start;
         }
 
         @media (max-width: 860px) {
           .ct-section {
             grid-template-columns: 1fr;
+            padding-top: 60px;
           }
         }
 
         /* Info column */
         .ct-info h2 {
-          font-size: 26px;
+          font-size: clamp(28px, 3vw, 38px);
           font-weight: 700;
           margin: 0 0 18px;
         }
@@ -136,7 +149,14 @@ export default function Contact() {
           gap: 16px;
           margin-bottom: 26px;
           align-items: flex-start;
+          padding: 15px;
+          border: 1px solid #e0efee;
+          border-radius: 14px;
+          background: rgba(255,255,255,.72);
+          transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
         }
+
+        .ct-info-item:hover { transform: translateX(4px); border-color: #a7d9d6; box-shadow: 0 10px 24px rgba(7,91,104,.08); }
 
         .ct-icon {
           flex-shrink: 0;
@@ -184,7 +204,7 @@ export default function Contact() {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: var(--black);
+          background: #075b68;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -205,9 +225,13 @@ export default function Contact() {
 
         /* Full-width Map */
         .ct-map-section {
-          width: 100%;
+          width: min(1180px, calc(100% - 48px));
           height: 420px;
-          border-top: 1px solid #e5e5e5;
+          margin: 0 auto 90px;
+          overflow: hidden;
+          border: 8px solid #ffffff;
+          border-radius: 22px;
+          box-shadow: 0 20px 55px rgba(7,91,104,.14);
         }
 
         .ct-map-section iframe {
@@ -219,8 +243,17 @@ export default function Contact() {
 
         @media (max-width: 640px) {
           .ct-banner {
-            height: 320px;
+            min-height: 390px;
+            background-position: 58% center;
           }
+          .ct-banner-content { width: calc(100% - 32px); padding: 0; }
+          .ct-banner-content h1 { font-size: clamp(38px, 13vw, 54px); }
+          .ct-section { padding: 52px 18px 64px; }
+          .ct-info-item { padding: 14px 12px; }
+          .ct-info-item > div { min-width: 0; }
+          .ct-info-item p, .ct-info-item a { overflow-wrap: anywhere; }
+          .ct-form-wrap { padding: 26px 20px; border-radius: 18px; }
+          .ct-map-section { width: calc(100% - 28px); margin-bottom: 64px; border-width: 5px; border-radius: 17px; }
           .ct-map-section {
             height: 300px;
           }
@@ -230,13 +263,13 @@ export default function Contact() {
         .ct-form-wrap {
           background: var(--white);
           border: 1px solid #e5e5e5;
-          border-radius: 16px;
-          padding: 38px 34px;
-          box-shadow: 0 20px 40px rgba(8, 163, 163, 0.08);
+          border-radius: 22px;
+          padding: clamp(28px, 4vw, 44px);
+          box-shadow: 0 24px 60px rgba(7,91,104,.12);
         }
 
         .ct-form-wrap h3 {
-          font-size: 20px;
+          font-size: clamp(24px, 3vw, 32px);
           font-weight: 700;
           margin: 0 0 6px;
         }
@@ -266,13 +299,14 @@ export default function Contact() {
           font-family: 'Poppins', sans-serif;
           font-size: 14px;
           font-weight: 400;
-          padding: 12px 14px;
+          min-height: 50px;
+          padding: 13px 15px;
           border: 1px solid #d9d9d9;
           border-radius: 10px;
           outline: none;
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
           color: var(--black);
-          background: var(--white);
+          background: #f9fcfc;
         }
 
         .ct-field input:focus,
@@ -294,14 +328,18 @@ export default function Contact() {
           font-family: 'Poppins', sans-serif;
           font-weight: 600;
           font-size: 15px;
+          min-height: 52px;
           padding: 14px 20px;
-          border-radius: 10px;
+          border-radius: 12px;
           cursor: pointer;
-          transition: background 0.2s ease;
+          box-shadow: 0 12px 24px rgba(8,163,163,.22);
+          transition: background 0.2s ease, transform .2s ease, box-shadow .2s ease;
         }
 
         .ct-submit:hover {
           background: var(--teal-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 16px 30px rgba(8,163,163,.3);
         }
 
         .ct-success {
@@ -379,7 +417,7 @@ export default function Contact() {
             </span>
             <div>
               <h4>Email</h4>
-              <a href="mailto:info@drjadhavarphysio.com">info@drjadhavarphysio.com</a>
+              <a href="mailto:drpratibhajadhavar@gmail.com">drpratibhajadhavar@gmail.com</a>
             </div>
           </div>
 
@@ -413,7 +451,7 @@ export default function Contact() {
             </a>
             <a
               className="ct-social-link"
-              href="https://www.facebook.com/drjadhavarphysio"
+              href="https://www.facebook.com/profile.php?id=61591214087018"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

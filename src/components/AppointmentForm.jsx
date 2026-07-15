@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaCheck, FaSpinner, FaCalendar, FaClock, FaUser, FaPhone, FaStethoscope } from 'react-icons/fa6';
+import { bookAppointment } from '../api'; // Import the API function
 import './AppointmentForm.css';
 
 const AppointmentForm = () => {
@@ -57,16 +58,20 @@ const AppointmentForm = () => {
     });
 
     try {
-      // Format date for better readability
-      const formattedDate = new Date(formData.preferredDate).toLocaleDateString('en-IN', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-      });
+      // Send data to backend
+      const response = await bookAppointment(formData);
 
-      // Create WhatsApp message
-      const message = `📋 *New Appointment Request*
-      
+      if (response.data.success) {
+        // Format date for WhatsApp message
+        const formattedDate = new Date(formData.preferredDate).toLocaleDateString('en-IN', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        });
+
+        // Create WhatsApp message
+        const message = `📋 *New Appointment Request*
+        
 👤 *Name:* ${formData.name}
 📱 *Mobile:* ${formData.mobile}
 🩺 *Problem:* ${formData.problem}
@@ -76,89 +81,45 @@ const AppointmentForm = () => {
 📍 *Source:* Website Appointment Form
 🏥 *Center:* Dr. Jadhavar Physiotherapy & Rehabilitation Center`;
 
-      // Encode message for URL
-      const encodedMessage = encodeURIComponent(message);
-      
-      // Send to WhatsApp
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=91${whatsappNumber}&text=${encodedMessage}`;
-      
-      // Open WhatsApp in new tab
-      window.open(whatsappUrl, '_blank');
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Send to WhatsApp
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=91${whatsappNumber}&text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
 
-      // Send auto-reply to user
-      await sendAutoReply(formData);
+        // Clear form
+        setFormData({
+          name: '',
+          mobile: '',
+          problem: '',
+          preferredDate: '',
+          preferredTime: '',
+        });
 
-      // Clear form
-      setFormData({
-        name: '',
-        mobile: '',
-        problem: '',
-        preferredDate: '',
-        preferredTime: '',
-      });
+        setFormStatus({
+          isSubmitting: false,
+          isSubmitted: true,
+          error: null
+        });
 
-      setFormStatus({
-        isSubmitting: false,
-        isSubmitted: true,
-        error: null
-      });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setFormStatus(prev => ({
-          ...prev,
-          isSubmitted: false
-        }));
-      }, 5000);
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setFormStatus(prev => ({
+            ...prev,
+            isSubmitted: false
+          }));
+        }, 5000);
+      }
 
     } catch (error) {
       console.error('Error submitting form:', error);
       setFormStatus({
         isSubmitting: false,
         isSubmitted: false,
-        error: 'Failed to book appointment. Please try again.'
+        error: error.response?.data?.message || 'Failed to book appointment. Please try again.'
       });
     }
-  };
-
-  const sendAutoReply = async (data) => {
-    // Auto-reply message for user
-    const autoReplyMessage = `*Thank you for booking an appointment with Dr. Jadhavar Physiotherapy & Rehabilitation Center!* 🏥
-
-We have received your appointment request for:
-📅 Date: ${new Date(data.preferredDate).toLocaleDateString('en-IN', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric'
-})}
-🕐 Time: ${data.preferredTime}
-
-Our team will confirm your appointment shortly via WhatsApp or call.
-
-*📍 Location:* Dr. Jadhavar Physiotherapy & Rehabilitation Center
-
-*💡 What to bring:*
-- Any previous medical reports
-- Prescriptions (if any)
-- Comfortable clothing for examination
-
-*🕐 Working Hours:*
-Monday - Saturday: 9:00 AM - 8:00 PM
-Sunday: Closed
-
-For urgent queries, call us at: +91 77009 95363
-
-*We look forward to helping you recover and move better!* 💪`;
-
-    const encodedAutoReply = encodeURIComponent(autoReplyMessage);
-    const userWhatsAppUrl = `https://api.whatsapp.com/send?phone=91${data.mobile}&text=${encodedAutoReply}`;
-    
-    // Open auto-reply in new tab (will open after a slight delay)
-    setTimeout(() => {
-      window.open(userWhatsAppUrl, '_blank');
-    }, 1500);
-
-    return true;
   };
 
   const getMinDate = () => {
@@ -191,7 +152,7 @@ For urgent queries, call us at: +91 77009 95363
             <h3>Appointment Request Submitted! ✅</h3>
             <p>
               Thank you for booking with Dr. Jadhavar Physiotherapy & Rehabilitation Center.
-              We will confirm your appointment shortly via WhatsApp.
+              We will confirm your appointment shortly via WhatsApp and Email.
             </p>
             <div className="success-details">
               <div className="success-item">
@@ -258,7 +219,7 @@ For urgent queries, call us at: +91 77009 95363
                 required
                 disabled={formStatus.isSubmitting}
               />
-              <small className="form-hint">We'll send confirmation via WhatsApp</small>
+              <small className="form-hint">We'll send confirmation via WhatsApp and Email</small>
             </div>
 
             <div className="form-group">
