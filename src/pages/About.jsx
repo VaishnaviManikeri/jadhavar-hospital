@@ -64,7 +64,7 @@ const About = () => {
 
           {/* Right Column - Information */}
           <div className="about-info-section">
-            <h2 className="section-heading">Welcome to Dr. Jadhavar Physiotherapy & Rehabilitation Center</h2>
+            <h2 className="section-heading">Welcome to Dr. Jadhavar's Physiotherapy & Rehabilitation Center</h2>
             <p className="about-description">
               At Dr. Jadhavar Physiotherapy & Rehabilitation Center, we are committed to providing 
               exceptional care through evidence-based physiotherapy and advanced treatment techniques. 
@@ -153,8 +153,8 @@ const About = () => {
             <p>Success Rate</p>
           </div>
           <div className="stat-item">
-            <h3>15+</h3>
-            <p>Years Experience</p>
+            <h3>6 Years</h3>
+            <p>of Experience</p>
           </div>
           <div className="stat-item">
             <h3>5.0</h3>

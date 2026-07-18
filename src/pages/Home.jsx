@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { FaArrowLeft, FaArrowRight, FaCheck, FaChevronDown, FaPlay, FaPlus } from 'react-icons/fa6';
+import { FaArrowRight, FaCheck, FaChevronDown, FaPlay, FaPlus } from 'react-icons/fa6';
 import {
   FaUserInjured,
   FaBone,
@@ -270,10 +270,6 @@ const Home = () => {
       }
     };
   }, []);
-
-  const moveTreatments = (direction) => {
-    setTreatmentStart((current) => (current + direction + treatments.length) % treatments.length);
-  };
 
   return (
     <main className="home">
@@ -555,9 +551,6 @@ const Home = () => {
         </div>
 
         <div className="treatment-slider">
-          <button className="treatment-arrow treatment-arrow-prev" type="button" aria-label="Previous treatments" onClick={() => moveTreatments(-1)}>
-            <FaArrowLeft />
-          </button>
           <div className="treatment-grid" key={treatmentStart}>
             {visibleTreatments.map((item, index) => (
               <div className="treatment-card" key={item.title} style={{ '--delay': `${index * 0.06}s` }}>
@@ -571,9 +564,6 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <button className="treatment-arrow treatment-arrow-next" type="button" aria-label="Next treatments" onClick={() => moveTreatments(1)}>
-            <FaArrowRight />
-          </button>
         </div>
       </section>
 

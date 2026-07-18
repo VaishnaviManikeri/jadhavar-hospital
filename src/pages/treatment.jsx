@@ -235,7 +235,7 @@ const Treatments = () => {
           <p>Successful Treatments</p>
         </div>
         <div className="stat-item">
-          <h3>15+</h3>
+          <h3>6</h3>
           <p>Years of Experience</p>
         </div>
       </div>

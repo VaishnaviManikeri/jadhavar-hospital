@@ -26,7 +26,7 @@ const DoctorProfile = () => (
             <FaBriefcaseMedical />
             <div>
               <span>Years of Experience</span>
-              <strong>4+ Years</strong>
+              <strong>6 Years</strong>
             </div>
           </article>
           <article>
@@ -52,7 +52,7 @@ const DoctorProfile = () => (
         <span>About the Doctor</span>
         <h2>Personalized care built around your recovery.</h2>
       </div>
-      <p>Dr. Pratibha Kendre Jadhavar is a dedicated physiotherapist committed to helping patients restore movement, relieve pain, and improve their quality of life through evidence-based, personalized care. She completed her Bachelor of Physiotherapy (B.P.Th) from Terna Medical College, Mumbai, followed by a Fellowship in Orthopedic Manual Therapy (IACP). With 4+ years of clinical experience, she specializes in the assessment and rehabilitation of musculoskeletal disorders, neurological conditions, sports injuries, spine and joint pain, and post-operative rehabilitation. Her treatment approach combines advanced manual therapy with modern rehabilitation techniques to deliver effective, long-lasting results.</p>
+      <p>Dr. Pratibha Kendre Jadhavar is a dedicated physiotherapist committed to helping patients restore movement, relieve pain, and improve their quality of life through evidence-based, personalized care. She completed her Bachelor of Physiotherapy (B.P.Th) from Terna Medical College, Mumbai, followed by a Fellowship in Orthopedic Manual Therapy (IACP). With 6 years of clinical experience, she specializes in the assessment and rehabilitation of musculoskeletal disorders, neurological conditions, sports injuries, spine and joint pain, and post-operative rehabilitation. Her treatment approach combines advanced manual therapy with modern rehabilitation techniques to deliver effective, long-lasting results.</p>
     </section>
   </main>
 );

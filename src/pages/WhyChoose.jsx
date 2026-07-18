@@ -25,7 +25,7 @@ const WhyChoose = () => {
     {
       icon: <FaHandHoldingHeart />,
       title: "Experienced Physiotherapist",
-      desc: "Highly skilled professionals with years of hands-on experience.",
+      desc: "Highly skilled physiotherapy care backed by 6 years of hands-on experience.",
     },
     {
       icon: <FaMoneyBillWave />,

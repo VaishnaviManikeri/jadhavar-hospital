@@ -56,7 +56,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  height: 54px;
+  min-height: 0;
+  padding: 0;
   border: none;
   outline: none;
 }
@@ -103,8 +105,8 @@
 }
 
 .logo-image {
-  width: 66px;
-  height: 66px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
   display: block;
   background: transparent !important;
@@ -834,5 +836,24 @@
   .navbar-content,
   .nav-content {
     padding-inline: 14px;
+  }
+}
+
+/* Keep the desktop navigation compact and flush with the page hero. */
+@media screen and (min-width: 769px) {
+  .navbar-brand-row {
+    display: none !important;
+  }
+
+  .navbar-top {
+    height: 72px !important;
+    min-height: 72px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .logo-image {
+    width: 70px !important;
+    height: 70px !important;
   }
 }

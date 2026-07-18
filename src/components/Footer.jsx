@@ -33,8 +33,11 @@ const Footer = () => (
 
       <div className="footer-columns">
         <div className="footer-brand">
+          <Link to="/" className="footer-brand-logo" aria-label="Dr. Jadhavar home page">
+            <img src="/assets/images/logo.png" alt="Dr. Jadhavar Physiotherapy logo" />
+          </Link>
           <Link to="/" className="footer-brand-heading footer-brand-copy">Dr. Jadhavar</Link>
-<h3 className="footer-brand-copy">Physiotherapy &amp; Rehabilitation Center</h3>
+          <h3 className="footer-brand-copy">Physiotherapy &amp; Rehabilitation Center</h3>
           <p className="footer-brand-copy">Personalized, evidence-based physiotherapy focused on reducing pain, restoring movement, and helping you return to an active life.</p>
         </div>
 
