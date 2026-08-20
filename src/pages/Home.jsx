@@ -322,11 +322,15 @@ const Home = () => {
           <div className="doctor-feature-image-wrap">
             <span className="doctor-feature-accent" aria-hidden="true" />
             <img
-              src="/assets/images/p1.png"
+              src="/assets/images/p3.png"
               alt="Dr. Pratibha Kendre Jadhavar providing physiotherapy care"
               className="doctor-feature-image"
               fetchPriority="high"
             />
+            {/* Book Appointment Button Below Image */}
+            <a href="/appointment" className="doctor-appointment-btn">
+              Book Appointment <FaArrowRight />
+            </a>
           </div>
 
           <div className="doctor-feature-copy">
