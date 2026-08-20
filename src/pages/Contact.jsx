@@ -533,14 +533,18 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Full-width Map */}
+      {/* Full-width Map - Updated Location */}
       <div className="ct-map-section">
         <iframe
-          title="Clinic Location - Dr. Jadhavar Physiotherapy & Rehabilitation Center"
-          src="https://www.google.com/maps?q=Indraprastha,+Jai+Ganesh+Primary+School+Road,+F-15b-374,+Lane+Number+3,+Dhide+Baug,+Wadgaon+Budruk,+Narhe,+Pune,+Maharashtra+411041&output=embed"
-          loading="lazy"
+          title="Dr. Jadhavar's Physiotherapy & Rehabilitation Center - Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.502276403521!2d73.81311767379896!3d18.460894370997227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295831f7491c9%3A0x77ae62828bf4d0e1!2sDr.%20Jadhavar's%20Physiotherapy%20%26%20Rehabilitation%20Center!5e0!3m2!1sen!2sin!4v1787223720364!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
           allowFullScreen
-        ></iframe>
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
       </div>
     </div>
   );
