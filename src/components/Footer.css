@@ -49,7 +49,7 @@
 .footer-cta > span { color: #9ce9e5; font-size: 11px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; }
 .footer-cta h2 { margin: 12px 0; color: #ffffff; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.08; letter-spacing: -2px; overflow-wrap: anywhere; }
 .footer-cta p { margin: 0; color: rgba(255,255,255,.8); font-size: clamp(11px, 1.4vw, 13px); line-height: 1.7; }
-.footer-appointment { display: inline-flex; align-items: center; gap: 10px; margin-top: 25px; padding: 13px 21px; color: #075b68; border-radius: 999px; background: #ffffff; font-size: 12px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,.16); transition: .25s ease; }
+.footer-appointment { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; margin-top: 25px; padding: 16px 30px; color: #075b68; border-radius: 999px; background: #ffffff; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,.16); transition: .25s ease; }
 .footer-appointment:hover { color: #087f80; transform: translateY(-3px); }
 
 .footer-columns { display: grid; grid-template-columns: minmax(220px, 1.5fr) minmax(120px, .75fr) minmax(120px, .75fr) minmax(240px, 1.15fr); align-items: start; gap: clamp(28px, 4vw, 52px); padding: 42px 0 36px; border-top: 1px solid rgba(255,255,255,.2); }
@@ -90,7 +90,7 @@
   .footer-cta { margin-bottom: 40px; }
   .footer-cta > span { display: block; line-height: 1.6; }
   .footer-cta h2 { font-size: clamp(1.8rem, 9vw, 2.5rem); line-height: 1.15; letter-spacing: -1px; }
-  .footer-appointment { justify-content: center; width: 100%; max-width: 280px; min-height: 46px; }
+  .footer-appointment { width: 100%; max-width: 320px; min-height: 58px; }
   .footer-columns { grid-template-columns: 1fr; gap: 32px; padding: 34px 0 36px 6px; text-align: left; }
   .footer-brand,
   .footer-contact { grid-column: auto; }

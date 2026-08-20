@@ -419,9 +419,10 @@
 .primary-btn,
 .secondary-btn {
   display: inline-block;
-  padding: 14px 40px;
+  min-height: 56px;
+  padding: 16px 44px;
   border-radius: 30px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;

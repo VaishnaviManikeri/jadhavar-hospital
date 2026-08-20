@@ -193,8 +193,9 @@
   background: #08A3A3;
   color: #ffffff;
   border: none;
-  padding: 12px 40px;
-  font-size: 1.1rem;
+  min-height: 56px;
+  padding: 15px 44px;
+  font-size: 1.2rem;
   font-weight: 600;
   border-radius: 30px;
   cursor: pointer;
@@ -316,8 +317,9 @@
   }
   
   .cta-button {
-    padding: 10px 30px;
-    font-size: 1rem;
+    min-height: 54px;
+    padding: 13px 34px;
+    font-size: 1.05rem;
   }
   
   .reel-caption {

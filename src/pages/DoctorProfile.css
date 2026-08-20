@@ -148,12 +148,13 @@
   align-items: center; 
   gap: 10px; 
   margin-top: 28px; 
-  padding: 14px 22px; 
+  min-height: 56px;
+  padding: 16px 28px; 
   border-radius: 999px; 
   color: #fff; 
   background: linear-gradient(135deg,#08a3a3,#087979); 
   box-shadow: 0 12px 28px rgba(8,127,128,.24); 
-  font-size: 12px; 
+  font-size: 15px; 
   font-weight: 700; 
   text-decoration: none; 
   font-family: 'Poppins',sans-serif;

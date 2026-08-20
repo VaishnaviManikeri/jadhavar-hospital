@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { FaArrowRight, FaCheck, FaChevronDown, FaPlay, FaPlus } from 'react-icons/fa6';
+import { useEffect, useState, useMemo } from 'react';
+import { FaArrowRight, FaCheck, FaChevronDown, FaPlay } from 'react-icons/fa6';
 import {
   FaUserInjured,
   FaBone,
@@ -211,7 +211,17 @@ const Home = () => {
   const [treatmentStart, setTreatmentStart] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
   const [activeCare, setActiveCare] = useState(4);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 780);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const visibleConditions = conditions.slice(0, 5);
 
@@ -224,8 +234,6 @@ const Home = () => {
 
   // Use Intersection Observer for lazy loading animations
   useEffect(() => {
-    setIsVisible(true);
-    
     // Set up intersection observer for lazy loading images
     if ('IntersectionObserver' in window) {
       const imageObserver = new IntersectionObserver((entries) => {
@@ -273,39 +281,72 @@ const Home = () => {
 
   return (
     <main className="home">
-      <section className="home-hero" aria-labelledby="home-title">
-        <div className="hero-layout">
-          <div className="hero-copy">
-            <div className="eyebrow"><span /> Trusted Physiotherapy Care</div>
-            <h1 id="home-title">
-              Dr. Jadhavar <span>Physiotherapy</span> and Rehabilitation Center
-            </h1>
-            <p className="hero-specialities">
-              Advanced Physiotherapy <i /> Sports Injury <i /> Pain Relief <i /> Rehabilitation
-            </p>
-            <p className="hero-lead">Recover Faster. Move Better. <strong>Live Pain-Free.</strong></p>
-            <p className="hero-description">
-              Compassionate, one-to-one care designed to restore movement, reduce pain,
-              and help you return to a stronger, more active life.
-            </p>
+      {/* Hero Section - Hidden on Mobile */}
+      {!isMobile && (
+        <section className="home-hero" aria-labelledby="home-title">
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <div className="eyebrow"><span /> Trusted Physiotherapy Care</div>
+              <h1 id="home-title">
+                Dr. Jadhavar <span>Physiotherapy</span> and Rehabilitation Center
+              </h1>
+              <p className="hero-specialities">
+                Advanced Physiotherapy <i /> Sports Injury <i /> Pain Relief <i /> Rehabilitation
+              </p>
+              <p className="hero-lead">Recover Faster. Move Better. <strong>Live Pain-Free.</strong></p>
+              <p className="hero-description">
+                Compassionate, one-to-one care designed to restore movement, reduce pain,
+                and help you return to a stronger, more active life.
+              </p>
 
-            <div className="hero-actions">
-              <a href="/appointment" className="primary-action">
-                Book an Appointment <FaArrowRight />
-              </a>
-              <a href="/treatments" className="secondary-action">
-                <span><FaPlay /></span> Explore Our Care
-              </a>
-            </div>
+              <div className="hero-actions">
+                <a href="/appointment" className="primary-action">
+                  Book an Appointment <FaArrowRight />
+                </a>
+                <a href="/treatments" className="secondary-action">
+                  <span><FaPlay /></span> Explore Our Care
+                </a>
+              </div>
 
-            <div className="hero-trust">
-              <span><FaCheck /> Personalized treatment</span>
-              <span><FaCheck /> Modern techniques</span>
+              <div className="hero-trust">
+                <span><FaCheck /> Personalized treatment</span>
+                <span><FaCheck /> Modern techniques</span>
+              </div>
             </div>
+          </div>
+        </section>
+      )}
+
+      <section className="doctor-feature" aria-labelledby="doctor-feature-title">
+        <div className="doctor-feature-inner">
+          <div className="doctor-feature-image-wrap">
+            <span className="doctor-feature-accent" aria-hidden="true" />
+            <img
+              src="/assets/images/pratibha.png"
+              alt="Dr. Pratibha Kendre Jadhavar providing physiotherapy care"
+              className="doctor-feature-image"
+              fetchPriority="high"
+            />
+          </div>
+
+          <div className="doctor-feature-copy">
+            <div className="eyebrow"><span /> Meet Your Physiotherapist</div>
+            <h2 id="doctor-feature-title">Expert guidance for a stronger recovery</h2>
+            <p>
+              Dr. Pratibha Kendre Jadhavar combines thoughtful assessment, modern
+              physiotherapy, and compassionate one-to-one care to help you move with
+              less pain and more confidence.
+            </p>
+            <div className="doctor-feature-details">
+              <span><FaCheck /> Personalized treatment plans</span>
+              <span><FaCheck /> Evidence-based rehabilitation</span>
+            </div>
+            <a href="/about-doctor" className="doctor-feature-link">
+              Meet Dr. Pratibha <FaArrowRight />
+            </a>
           </div>
         </div>
       </section>
-      
 
       <section className="service-strip" id="services" aria-label="Our physiotherapy services">
         <div className="service-cards">
@@ -325,50 +366,47 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="center-intro" aria-labelledby="center-intro-title">
-        <div className="center-intro-layout">
-          <div className="center-collage" aria-label="Physiotherapy care at Dr. Jadhavar Center">
-            <div className="collage-main">
-              <img src="/assets/images/ab2.png" alt="Physiotherapy specialist providing expert care" loading="lazy" />
-            </div>
-            <div className="collage-secondary">
-              <img src="/assets/images/ab1.png" alt="Patient receiving physiotherapy rehabilitation" loading="lazy" />
-            </div>
-          
-          </div>
-
-          <div className="center-intro-copy">
-            <div className="center-kicker"><span /> About Our Center</div>
-            <h2 id="center-intro-title">
-              Dr. Jadhavar <span>Physiotherapy</span> &amp; Rehabilitation Center
-            </h2>
-            <p className="center-specialities">
-              Advanced Physiotherapy <i /> Sports Injury <i /> Pain Relief <i /> Rehabilitation
-            </p>
-            <p className="center-summary">
-              Dedicated care, modern rehabilitation techniques, and personalized treatment
-              plans that help you restore movement, reduce pain, and return to everyday life
-              with confidence.
-            </p>
-
-            <div className="center-benefits">
-              <span><FaCheck /> Evidence-based physiotherapy care</span>
-              <span><FaCheck /> Personalized recovery programs</span>
-              <span><FaCheck /> Support through every stage of rehabilitation</span>
+      {/* Center Intro Section - Hidden on Mobile */}
+      {!isMobile && (
+        <section className="center-intro" aria-labelledby="center-intro-title">
+          <div className="center-intro-layout">
+            <div className="center-collage" aria-label="Physiotherapy care at Dr. Jadhavar Center">
+              <div className="collage-main">
+                <img src="/assets/images/ab2.png" alt="Physiotherapy specialist providing expert care" loading="lazy" />
+              </div>
+              <div className="collage-secondary">
+                <img src="/assets/images/ab1.png" alt="Patient receiving physiotherapy rehabilitation" loading="lazy" />
+              </div>
             </div>
 
-            <div className="center-actions">
-              <a href="/treatment" className="center-about-btn">Explore Services <FaArrowRight /></a>
-              <a href="/appointment" className="center-play-btn"><i><FaPlay /></i> Book Appointment</a>
-              {/* <div className="center-stat">
-                <FaPlus />
-                <strong>4</strong>
-                <span>Core Care Areas</span>
-              </div> */}
+            <div className="center-intro-copy">
+              <div className="center-kicker"><span /> About Our Center</div>
+              <h2 id="center-intro-title">
+                Dr. Jadhavar <span>Physiotherapy</span> &amp; Rehabilitation Center
+              </h2>
+              <p className="center-specialities">
+                Advanced Physiotherapy <i /> Sports Injury <i /> Pain Relief <i /> Rehabilitation
+              </p>
+              <p className="center-summary">
+                Dedicated care, modern rehabilitation techniques, and personalized treatment
+                plans that help you restore movement, reduce pain, and return to everyday life
+                with confidence.
+              </p>
+
+              <div className="center-benefits">
+                <span><FaCheck /> Evidence-based physiotherapy care</span>
+                <span><FaCheck /> Personalized recovery programs</span>
+                <span><FaCheck /> Support through every stage of rehabilitation</span>
+              </div>
+
+              <div className="center-actions">
+                <a href="/treatment" className="center-about-btn">Explore Services <FaArrowRight /></a>
+                <a href="/appointment" className="center-play-btn"><i><FaPlay /></i> Book Appointment</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="doctor-led-section" aria-labelledby="doctor-led-title">
         <div className="doctor-led-inner">
