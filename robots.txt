@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin/private pages
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /admin/dashboard
+Disallow: /admin/gallery
+Disallow: /admin/blogs
+
+# Sitemap
+Sitemap: https://drjadhavarphysiotherapy.com/sitemap.xml
